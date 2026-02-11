@@ -1,0 +1,15 @@
+INVEST Logo Image Required
+
+Please add the INVEST logo image file here as:
+- Filename: invest-logo.png
+- Location: assets/invest-logo.png
+
+The logo should be the circular INVEST badge showing:
+- Blue circular background
+- White "INVEST" text
+- "Zuschuss für Wagniskapital" subtitle
+- Red "FÖRDERFÄHIG" banner
+- Website: www.invest-wagniskapital.de
+
+You can download it from the AEQUIFIN website or from the official INVEST program website.
+

@@ -1,0 +1,474 @@
+<?php
+$pageTitle = "About Us - AEQUIFIN";
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><?php echo $pageTitle; ?></title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-container">
+            <div class="logo">
+                <a href="/">
+                    <img src="assets/aequifin-logo.jpg" alt="AEQUIFIN Logo">
+                </a>
+            </div>
+            <nav class="nav">
+                <button>Prozesse finanzieren</button>
+                <button>Prozessfinanzierung erhalten</button>
+                <button>Über AEQUIFIN</button>
+            </nav>
+            <div class="controls">
+                <div class="language-selector">DE|EN</div>
+                <button class="button-secondary">Login</button>
+                <button class="button-primary">Registration</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>About AEQUIFIN</h1>
+                    <p class="hero-subtitle">Transparency, Trust, and Excellence in Litigation Financing</p>
+                    <p class="hero-description">
+                        AEQUIFIN is an online marketplace for litigation funding. Litigants (private individuals and companies), 
+                        lawyers and sponsors are connected with each other to finance and enforce legal matters – with and without 
+                        a financial objective.
+                    </p>
+                </div>
+                
+                <!-- Interactive Ecosystem Visualization -->
+                <div class="ecosystem-visualization">
+                    <div class="ecosystem-text-column">
+                        <div class="ecosystem-item" data-target="litigants">
+                            <h4>LITIGANTS</h4>
+                            <p>
+                                <strong class="highlight-value">Companies, institutions and private individuals</strong> can shift or reduce financial risks from legal disputes with the help of sponsors. This can have economic advantages, even if their financial situation does not make financing by third parties absolutely necessary.
+                            </p>
+                        </div>
+                        <div class="ecosystem-item" data-target="lawyers">
+                            <h4>LAWYERS</h4>
+                            <p>
+                                <strong class="highlight-value">Lawyers</strong> can find sponsors for existing mandates and conduct litigation. They also gain access to new clients.
+                            </p>
+                        </div>
+                        <div class="ecosystem-item" data-target="sponsors">
+                            <h4>SPONSORS</h4>
+                            <p>
+                                <strong class="highlight-value">Sponsors</strong> can choose whether they want to pursue financial goals or support cases where legal deficits are apparent.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="ecosystem-visual-column">
+                        <div class="ecosystem-diagram">
+                            <svg class="ecosystem-svg" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+                                <defs>
+                                    <marker id="arrowhead" markerWidth="8" markerHeight="8" refX="50" refY="4" orient="auto" markerUnits="userSpaceOnUse">
+                                        <polygon points="0 0, 8 4, 0 8" fill="#cbd5e1" stroke="none"/>
+                                    </marker>
+                                    <marker id="arrowhead-active" markerWidth="8" markerHeight="8" refX="50" refY="4" orient="auto" markerUnits="userSpaceOnUse">
+                                        <polygon points="0 0, 8 4, 0 8" fill="#005781" stroke="none"/>
+                                    </marker>
+                                </defs>
+                                
+                                <!-- All arrows are segments of the SAME circle (center 200,200, radius 140) -->
+                                <!-- Direction: Litigants → Lawyers → Sponsors → Litigants -->
+                                <!-- All arcs are segments of the SAME circle (center 200,200, radius 140) -->
+                                <!-- Each arc is 120° (one third of the circle) -->
+                                
+                                <!-- Litigants (30°) to Lawyers (-90°) - 120° counter-clockwise arc -->
+                                <path class="connection-line" id="line-litigants-lawyers" data-entity="litigants" d="M 321.24 270 A 140 140 0 0 0 200 60" stroke="#cbd5e1" stroke-width="3" fill="none" marker-end="url(#arrowhead)" opacity="0.4"/>
+                                
+                                <!-- Lawyers (-90°) to Sponsors (150°) - 120° counter-clockwise arc -->
+                                <path class="connection-line" id="line-lawyers-sponsors" data-entity="lawyers" d="M 200 60 A 140 140 0 0 0 78.76 270" stroke="#cbd5e1" stroke-width="3" fill="none" marker-end="url(#arrowhead)" opacity="0.4"/>
+                                
+                                <!-- Sponsors (150°) to Litigants (30°) - 120° counter-clockwise arc -->
+                                <path class="connection-line" id="line-sponsors-litigants" data-entity="sponsors" d="M 78.76 270 A 140 140 0 0 0 321.24 270" stroke="#cbd5e1" stroke-width="3" fill="none" marker-end="url(#arrowhead)" opacity="0.4"/>
+                                
+                                <!-- Lawyers Node (-90°, top) -->
+                                <circle class="ecosystem-node" id="node-lawyers" data-entity="lawyers" cx="200" cy="60" r="50" fill="#e2e8f0" stroke="#ffffff" stroke-width="4"/>
+                                <text x="200" y="58" text-anchor="middle" class="node-label" fill="#64748b" font-size="15" font-weight="600">LAWYERS</text>
+                                
+                                <!-- Litigants Node (30°, bottom right) -->
+                                <circle class="ecosystem-node" id="node-litigants" data-entity="litigants" cx="321.24" cy="270" r="50" fill="#e2e8f0" stroke="#ffffff" stroke-width="4"/>
+                                <text x="321.24" y="268" text-anchor="middle" class="node-label" fill="#64748b" font-size="15" font-weight="600">LITIGANTS</text>
+                                
+                                <!-- Sponsors Node (150°, bottom left) -->
+                                <circle class="ecosystem-node" id="node-sponsors" data-entity="sponsors" cx="78.76" cy="270" r="50" fill="#e2e8f0" stroke="#ffffff" stroke-width="4"/>
+                                <text x="78.76" y="268" text-anchor="middle" class="node-label" fill="#64748b" font-size="15" font-weight="600">SPONSORS</text>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </section>
+
+        <!-- Who is AEQUIFIN? -->
+        <section id="who-is-aequifin" class="content-section no-animate">
+            <div class="section-header">
+                <h2>Who is AEQUIFIN?</h2>
+                <hr>
+            </div>
+            <div class="story-section who-section">
+                <div class="story-content who-layout">
+                    <div class="who-text">
+                        <h3 class="who-heading">Welcome to AEQUIFIN</h3>
+                        <p class="text-lg who-body">
+                            AEQUIFIN is an innovative online marketplace for litigation funding. The AEQUIFIN platform provides direct and transparent access to litigation funding. Litigants (private individuals and companies), lawyers and sponsors are connected with each other to finance and enforce legal matters – with and without a financial objective.
+                        </p>
+                    </div>
+                    <div class="who-video">
+                        <div class="who-video-wrapper">
+                            <a href="https://player.vimeo.com/e8501888-25dc-430a-9099-87991ecb3561" target="_blank" rel="noopener" class="who-video-link">
+                                <img 
+                                    src="assets/Welcome-to-AEQUIFIN-EN-1.png" 
+                                    alt="Welcome to AEQUIFIN video thumbnail" 
+                                    class="who-video-thumbnail who-video-thumbnail-base">
+                                <img 
+                                    src="assets/Welcome-to-AEQUIFIN-EN-2.png" 
+                                    alt="" 
+                                    class="who-video-thumbnail who-video-thumbnail-hover">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Trust AEQUIFIN? -->
+        <section class="content-section">
+            <div class="section-header">
+                <h2>Why Trust AEQUIFIN?</h2>
+                <hr>
+            </div>
+            
+            <!-- Transparency Section -->
+            <div class="trust-feature trust-feature-reverse">
+                <div class="trust-feature-content">
+                    <div class="trust-feature-text">
+                        <h3>Complete Transparency</h3>
+                        <p class="text-lg mb-4">
+                            We believe in full disclosure. We make our money through a transparent fee structure 
+                            that is clearly communicated upfront. Our success fees are based on the outcome of your 
+                            case, ensuring our interests are aligned with yours. We have nothing to hide—our business 
+                            model is built on trust and fairness.
+                        </p>
+                        <div class="trust-feature-actions">
+                            <a href="https://www.aequifin.com/en/how-it-works" class="button-primary">View Our Process</a>
+                        </div>
+                    </div>
+                    <div class="trust-feature-visual">
+                        <div class="trust-visual-card">
+                            <div class="trust-visual-header">
+                                <h4>Evaluation Process</h4>
+                            </div>
+                            <div class="trust-process-steps">
+                                <div class="process-step">
+                                    <div class="process-step-number">1</div>
+                                    <div class="process-step-content">
+                                        <h5>Initial Review</h5>
+                                        <p>Case documentation analysis</p>
+                                    </div>
+                                </div>
+                                <div class="process-step">
+                                    <div class="process-step-number">2</div>
+                                    <div class="process-step-content">
+                                        <h5>Legal Assessment</h5>
+                                        <p>Expert legal team evaluation</p>
+                                    </div>
+                                </div>
+                                <div class="process-step">
+                                    <div class="process-step-number">3</div>
+                                    <div class="process-step-content">
+                                        <h5>Risk Analysis</h5>
+                                        <p>Financial and risk assessment</p>
+                                    </div>
+                                </div>
+                                <div class="process-step">
+                                    <div class="process-step-number">4</div>
+                                    <div class="process-step-content">
+                                        <h5>Final Decision</h5>
+                                        <p>Multi-stage approval process</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- AEQUIFIN Team -->
+        <section class="content-section">
+            <div class="section-header">
+                <h2>The People Behind AEQUIFIN</h2>
+                <hr>
+            </div>
+            <div class="team-intro">
+                <p class="text-lg">
+                    Behind every successful case is a team of dedicated professionals. Our experts bring decades 
+                    of combined experience in law, finance, and risk assessment. We're not just a platform—we're 
+                    a team of people committed to making justice accessible.
+                </p>
+            </div>
+            <div class="team-grid-equal">
+                <div class="team-member-card">
+                    <div class="member-avatar">
+                        <div class="avatar-placeholder"></div>
+                    </div>
+                    <div class="member-info">
+                        <h4>Dr. Arndt Eversberg</h4>
+                        <p class="member-role">CEO & Co-Founder</p>
+                        <p class="member-bio">
+                            With over 15 years of experience in legal finance and a Ph.D. in Law, brings deep 
+                            expertise in case evaluation and risk assessment.
+                        </p>
+                    </div>
+                </div>
+                <div class="team-member-card">
+                    <div class="member-avatar">
+                        <div class="avatar-placeholder"></div>
+                    </div>
+                    <div class="member-info">
+                        <h4>Ludwig Zoller</h4>
+                        <p class="member-role">CFO & Co-Founder</p>
+                        <p class="member-bio">
+                            Seasoned financial executive with expertise in alternative finance and risk management.
+                        </p>
+                    </div>
+                </div>
+                <div class="team-member-card">
+                    <div class="member-avatar">
+                        <div class="avatar-placeholder"></div>
+                    </div>
+                    <div class="member-info">
+                        <h4>Antonia Zoller</h4>
+                        <p class="member-role">Head of Legal Analysis</p>
+                        <p class="member-bio">
+                            Extensive experience as a practicing attorney, leading our case evaluation team.
+                        </p>
+                    </div>
+                </div>
+                <div class="team-member-card">
+                    <div class="member-avatar">
+                        <div class="avatar-placeholder"></div>
+                    </div>
+                    <div class="member-info">
+                        <h4>Frank Martin Binder</h4>
+                        <p class="member-role">Head of Operations</p>
+                        <p class="member-bio">
+                            Manages day-to-day operations, ensuring smooth processes from case submission to resolution.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- AEQUIFIN SOLUTIONS -->
+        <section class="content-section">
+            <div class="section-header">
+                <h2>AEQUIFIN SOLUTIONS</h2>
+                <hr>
+            </div>
+            <div class="solutions-grid-3col">
+                <div class="solution-card">
+                    <h3>Classic</h3>
+                    <div class="solution-icon">
+                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 32 32" fill="currentColor">
+                            <path d="M32 20.8c0 0.295-0.238 0.533-0.533 0.533h-1.691l-1.518 8.099c-0.047 0.252-0.268 0.435-0.524 0.435h-3.2c-0.25 0-0.467-0.173-0.521-0.418l-1.067-4.8c-0.064-0.288 0.117-0.573 0.405-0.636s0.572 0.117 0.636 0.405l0.974 4.382h2.33l1.518-8.099c0.004-0.020 0.016-0.034 0.021-0.053 0.011-0.035 0.023-0.067 0.040-0.099 0.017-0.030 0.035-0.057 0.056-0.083s0.045-0.050 0.071-0.071c0.027-0.022 0.053-0.040 0.084-0.056 0.029-0.017 0.059-0.029 0.092-0.040s0.068-0.017 0.103-0.021c0.020-0.002 0.036-0.012 0.057-0.012h1.6v-3.667c0-0.012 0.006-0.022 0.006-0.033-0.001-0.012-0.006-0.022-0.006-0.034 0-2.836-1.261-5.867-4.8-5.867-0.294 0-0.533-0.238-0.533-0.533s0.239-0.533 0.533-0.533c3.564 0 5.867 2.722 5.867 6.933 0 0.012-0.006 0.022-0.007 0.034 0.001 0.011 0.007 0.021 0.007 0.033v4.2zM22.4 5.867c0-2.059 1.675-3.734 3.733-3.734s3.733 1.675 3.733 3.734c0 2.059-1.675 3.733-3.733 3.733s-3.733-1.675-3.733-3.733zM26.133 8.533c1.47 0 2.667-1.196 2.667-2.666s-1.196-2.667-2.667-2.667c-1.47 0-2.667 1.196-2.667 2.667s1.196 2.666 2.667 2.666zM22.933 14.4c0 0.012-0.006 0.022-0.007 0.033 0.001 0.012 0.007 0.022 0.007 0.034v6.333c0 0.295-0.239 0.533-0.533 0.533h-2.717l-1.019 10.186c-0.027 0.273-0.257 0.481-0.531 0.481h-4.267c-0.274 0-0.503-0.208-0.531-0.481l-1.019-10.186h-2.717c-0.294 0-0.533-0.238-0.533-0.533v-6.333c0-0.012 0.006-0.022 0.006-0.034-0.001-0.011-0.006-0.021-0.006-0.033 0-3.823 3.11-6.933 6.933-6.933s6.933 3.11 6.933 6.933zM16 8.533c-3.235 0-5.867 2.632-5.867 5.867 0 0.012-0.006 0.022-0.007 0.033 0.001 0.012 0.007 0.022 0.007 0.034v5.8h2.667c0.032 0 0.060 0.013 0.090 0.018s0.060 0.008 0.087 0.018c0.039 0.014 0.071 0.035 0.106 0.057 0.024 0.015 0.049 0.028 0.070 0.047 0.028 0.025 0.048 0.054 0.070 0.083 0.019 0.026 0.039 0.050 0.054 0.080 0.015 0.031 0.022 0.066 0.031 0.101 0.007 0.026 0.021 0.048 0.023 0.076l1.019 10.187h3.301l1.019-10.187c0.003-0.028 0.017-0.050 0.023-0.076 0.009-0.035 0.015-0.069 0.031-0.101 0.015-0.030 0.035-0.054 0.055-0.081 0.021-0.029 0.041-0.058 0.068-0.082 0.022-0.020 0.047-0.033 0.073-0.049 0.033-0.021 0.065-0.042 0.103-0.055 0.028-0.010 0.059-0.013 0.089-0.018s0.058-0.018 0.090-0.018h2.667v-5.8c0-0.012 0.006-0.022 0.007-0.034-0.001-0.011-0.007-0.021-0.007-0.033 0-3.235-2.632-5.867-5.867-5.867zM12.267 3.733c0-2.058 1.675-3.732 3.733-3.732s3.733 1.674 3.733 3.732c0 2.059-1.675 3.734-3.733 3.734s-3.733-1.675-3.733-3.734zM16 6.4c1.47 0 2.667-1.197 2.667-2.667s-1.196-2.666-2.667-2.666-2.667 1.196-2.667 2.666c0 1.47 1.196 2.667 2.667 2.667zM5.868 9.6c-2.059 0-3.734-1.675-3.734-3.733s1.675-3.734 3.734-3.734c2.058 0 3.732 1.675 3.732 3.734s-1.674 3.733-3.732 3.733zM5.868 3.2c-1.471 0-2.668 1.196-2.668 2.667s1.197 2.666 2.668 2.666c1.47 0 2.666-1.196 2.666-2.666s-1.196-2.667-2.666-2.667zM6.4 10.133c0 0.295-0.239 0.533-0.533 0.533-3.539 0-4.8 3.031-4.8 5.867 0 0.012-0.006 0.022-0.007 0.034 0.001 0.011 0.007 0.021 0.007 0.033v3.667h1.6c0.020 0 0.038 0.010 0.058 0.012 0.035 0.004 0.068 0.010 0.102 0.021s0.063 0.023 0.094 0.040c0.029 0.017 0.056 0.034 0.082 0.056s0.050 0.045 0.071 0.072c0.021 0.026 0.039 0.052 0.056 0.083 0.017 0.031 0.029 0.063 0.040 0.099 0.005 0.018 0.018 0.033 0.021 0.053l1.518 8.099h2.33l0.974-4.382c0.063-0.287 0.349-0.468 0.636-0.405s0.469 0.348 0.405 0.636l-1.067 4.8c-0.054 0.244-0.27 0.418-0.521 0.418h-3.2c-0.257 0-0.477-0.182-0.524-0.435l-1.518-8.099h-1.691c-0.294 0-0.533-0.238-0.533-0.533v-4.2c0-0.012 0.006-0.022 0.006-0.033-0.001-0.012-0.006-0.022-0.006-0.034 0-4.212 2.303-6.933 5.867-6.933 0.294 0 0.533 0.238 0.533 0.533z"></path>
+                        </svg>
+                    </div>
+                    <p>Lawyers find litigation funding for litigants. Therefore litigants mandate their lawyer or find specialised lawyers via the platform.</p>
+                    <a href="#" class="solution-link">More information</a>
+                </div>
+                <div class="solution-card">
+                    <h3>Professional</h3>
+                    <div class="solution-icon">
+                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 32 32" fill="currentColor">
+                            <path d="M31.42 13.851c-0.002 0-0.006 0-0.010 0h-4.26v11.721h2.201c0.294 0 0.532 0.238 0.532 0.533s-0.238 0.533-0.532 0.533h-26.764c-0.294 0-0.532-0.238-0.532-0.533s0.238-0.533 0.532-0.533h2.201v-11.721h-4.259c-0.233 0-0.439-0.152-0.509-0.374s0.014-0.465 0.206-0.597l15.441-10.655c0.182-0.126 0.422-0.126 0.604 0l15.381 10.614c0.178 0.087 0.3 0.269 0.3 0.479 0 0.294-0.238 0.533-0.533 0.533zM21.826 25.571h4.26v-11.721h-4.26v11.721zM20.761 25.571v-11.721h-4.276v11.717c0 0.001 0 0.002 0 0.003h4.276zM15.436 25.571v-11.721h-4.284v11.717c0 0.001 0 0.002 0 0.003h4.284zM10.112 25.571v-11.721h-4.293v11.717c0 0.001 0 0.002 0 0.003h4.293zM15.969 3.31l-13.731 9.475h27.462l-13.731-9.475zM0.529 28.768h30.881c0.294 0 0.532 0.238 0.532 0.533s-0.238 0.533-0.532 0.533h-30.881c-0.294 0-0.533-0.239-0.533-0.533s0.238-0.533 0.533-0.533z"></path>
+                        </svg>
+                    </div>
+                    <p>Companies, institutions or qualified private individuals (litigants) receive litigation funding in line with market conditions and market prices. If necessary, they find specialised lawyers via the platform.</p>
+                    <a href="#" class="solution-link">More information</a>
+                </div>
+                <div class="solution-card">
+                    <h3>Legal Projects</h3>
+                    <div class="solution-icon">
+                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 32 32" fill="currentColor">
+                            <path d="M26.133 22.401c-3.235 0-5.867-2.632-5.867-5.867 0-0.295 0.238-0.534 0.533-0.534h0.918l3.851-11.2h-9.036v24.533h4.8c0.295 0 0.533 0.239 0.533 0.534s-0.238 0.533-0.533 0.533h-10.667c-0.295 0-0.533-0.238-0.533-0.533s0.238-0.534 0.533-0.534h4.8v-24.533h-9.036l3.852 11.2h0.918c0.295 0 0.533 0.239 0.533 0.534 0 3.235-2.632 5.867-5.867 5.867s-5.867-2.632-5.867-5.867c0-0.295 0.238-0.534 0.533-0.534h0.918l3.851-11.2h-2.636c-0.295 0-0.533-0.238-0.533-0.533s0.238-0.533 0.533-0.533h12.8v-1.6c0-0.295 0.238-0.533 0.533-0.533s0.533 0.238 0.533 0.533v1.6h12.8c0.295 0 0.533 0.238 0.533 0.533s-0.238 0.533-0.533 0.533h-2.636l3.852 11.2h0.918c0.295 0 0.533 0.239 0.533 0.534 0 3.235-2.632 5.867-5.867 5.867zM1.832 17.068c-0.001 0-0.002-0.001-0.003-0.001h-0.733c0.266 2.397 2.303 4.267 4.77 4.267s4.504-1.87 4.77-4.267h-8.803c-0.001 0-0.002 0.001-0.002 0.001zM2.579 16h6.575l-3.288-9.56-3.287 9.56zM26.133 6.44l-3.287 9.56h6.575l-3.288-9.56zM22.101 17.067c-0.001 0-0.002 0.001-0.002 0.001s-0.002-0.001-0.003-0.001h-0.733c0.266 2.397 2.303 4.267 4.77 4.267s4.504-1.87 4.77-4.267h-8.803z"></path>
+                        </svg>
+                    </div>
+                    <p>The platform provides IT infrastructure and litigation funding know-how for the preparation of concrete legal proceedings for lawyers, companies, institutions and private individuals.</p>
+                    <a href="#" class="solution-link">More information</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Recognition & Media -->
+        <section class="content-section">
+            <div class="section-header">
+                <h2>Recognition & Media</h2>
+                <hr>
+            </div>
+            <div class="recognition-media-section">
+                <div class="recognition-side">
+                    <h3>Industry Recognition</h3>
+                    <p class="text-lg">
+                        Our commitment to excellence and ethical practices has been recognized by industry 
+                        leaders and regulatory bodies.
+                    </p>
+                    <div class="recognition-badges">
+                        <div class="recognition-badge-large">
+                            <div class="badge-indicator"></div>
+                            <div class="badge-content">
+                                <h4>Economic Affairs and Energy</h4>
+                                <p>Supported by German Federal Ministry for Economic Affairs and Energy</p>
+                            </div>
+                        </div>
+                        <div class="recognition-badge-large">
+                            <div class="badge-indicator"></div>
+                            <div class="badge-content">
+                                <h4>Fully Regulated</h4>
+                                <p>Compliant with German financial services regulations</p>
+                            </div>
+                        </div>
+                        <div class="recognition-badge-large">
+                            <div class="badge-indicator"></div>
+                            <div class="badge-content">
+                                <h4>Industry Member</h4>
+                                <p>Member of leading legal finance associations</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="media-side">
+                    <h3>In The Press</h3>
+                    <p class="text-lg">
+                        Our innovative approach to litigation financing has garnered attention from media 
+                        outlets and industry experts.
+                    </p>
+                    <div class="media-mentions">
+                        <div class="media-mention">
+                            <div class="media-outlet">inkl</div>
+                            <p class="media-quote">"The Quiet $20B Market Reshaping Alternative Investments: AEQUIFIN Is Changing the Game"</p>
+                            <a href="https://www.inkl.com/news/the-quiet-20b-market-reshaping-alternative-investments-aequifin-is-changing-the-game" class="media-link" target="_blank" rel="noopener noreferrer">Read Article →</a>
+                        </div>
+                        <div class="media-mention">
+                            <div class="media-outlet">Barchart</div>
+                            <p class="media-quote">"AEQUIFIN Highlights Litigation Financing as a Leading Alternative Investment Asset Class for Investors"</p>
+                            <a href="https://www.barchart.com/story/news/35436760/aequifin-highlights-litigation-financing-as-a-leading-alternative-investment-asset-class-for-investors" class="media-link" target="_blank" rel="noopener noreferrer">Read Article →</a>
+                        </div>
+                        <div class="media-mention">
+                            <div class="media-outlet">Big News Network</div>
+                            <p class="media-quote">"Alternative Investments with AEQUIFIN: 2026 Litigation Funding Deserves Attention"</p>
+                            <a href="https://www.bignewsnetwork.com/news/278631805/alternative-investments-with-aequifin-2026-litigation-funding-deserves-attention" class="media-link" target="_blank" rel="noopener noreferrer">Read Article →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact/Location -->
+        <section class="content-section">
+            <div class="section-header">
+                <h2>Contact & Location</h2>
+                <hr>
+            </div>
+            <div class="contact-redesign">
+                <div class="contact-header">
+                    <h3>Get in Touch</h3>
+                    <p class="text-lg">
+                        Whether you're seeking litigation financing, have questions about our services, or want 
+                        to learn more about becoming a sponsor, our team is ready to assist you.
+                    </p>
+                </div>
+                <div class="contact-grid-redesign">
+                    <div class="contact-card">
+                        <div class="contact-card-header">
+                            <h4>Email Us</h4>
+                        </div>
+                        <a href="mailto:info@aequifin.com" class="contact-link">info@aequifin.com</a>
+                        <p class="contact-card-note">We typically respond within 24 hours</p>
+                    </div>
+                    <div class="contact-card">
+                        <div class="contact-card-header">
+                            <h4>Call Us</h4>
+                        </div>
+                        <a href="tel:+498927372700" class="contact-link">+49 89 2737270-0</a>
+                        <p class="contact-card-note">Monday - Friday, 9:00 AM - 6:00 PM CET</p>
+                    </div>
+                    <div class="contact-card">
+                        <div class="contact-card-header">
+                            <h4>Visit Us</h4>
+                        </div>
+                        <div class="contact-address">
+                            <p>AEQUIFIN GmbH & Co. KGaA</p>
+                            <p>Bavariafilmpl. 7</p>
+                            <p>82031 Grünwald, Germany</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-cta-redesign">
+                    <h4>Ready to Get Started?</h4>
+                    <p>Explore our platform and see how we can help you pursue justice or invest in legal cases.</p>
+                    <div class="contact-buttons">
+                        <a href="https://www.aequifin.com/en/how-it-works" class="button-primary">Learn How It Works</a>
+                        <a href="https://www.aequifin.com/en/litigation-cost-calculator" class="button-secondary">Register Now</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- INVEST Program Support -->
+        <section class="content-section">
+            <div class="invest-support-section">
+                <p class="invest-support-text">AEQUIFIN is supported by</p>
+                <div class="invest-badge-container">
+                    <img src="assets/INVEST_Logo_URL_rote_URL_RZ.png" alt="INVEST - Zuschuss für Wagniskapital" class="invest-badge">
+                </div>
+                <div class="invest-info">
+                    <p class="invest-info-text">For further information:</p>
+                    <div class="invest-links">
+                        <a href="https://www.bmwi.de" target="_blank" rel="noopener noreferrer" class="invest-link">Bundesamt für Wirtschaft und Energie</a>
+                        <span class="invest-link-separator">und</span>
+                        <a href="https://www.bafa.de" target="_blank" rel="noopener noreferrer" class="invest-link">Bundesamt für Wirtschaft und Ausfuhrkontrolle</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <nav class="footer-nav">
+                <a href="/">Home</a>
+                <a href="/about">Über AEQUIFIN</a>
+                <a href="/how-it-works">So funktioniert's</a>
+                <a href="/faq">FAQ</a>
+                <a href="/news">News</a>
+            </nav>
+            <div class="footer-copyright">
+                <p>© 2017-2024 AEQUIFIN GmbH & Co. KGaA - Alle Rechte vorbehalten. | Impressum | Datenschutz | AGB | Preisblatt | Kontakt</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+

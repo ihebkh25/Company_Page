@@ -1,9 +1,12 @@
+<?php
+$pageTitle = "About Us - AEQUIFIN";
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us - AEQUIFIN</title>
+    <title><?php echo $pageTitle; ?></title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -97,26 +100,14 @@
                                 <!-- Lawyers Node (-90°, top) -->
                                 <circle class="ecosystem-node" id="node-lawyers" data-entity="lawyers" cx="200" cy="60" r="50" fill="#e2e8f0" stroke="#ffffff" stroke-width="4"/>
                                 <text x="200" y="58" text-anchor="middle" class="node-label" fill="#64748b" font-size="15" font-weight="600">LAWYERS</text>
-                                <text x="200" y="132" text-anchor="middle" class="node-subtext" data-entity="lawyers">
-                                    <tspan x="200" dy="0">Brings legal expertise</tspan>
-                                    <tspan x="200" dy="14">and manages cases</tspan>
-                                </text>
                                 
                                 <!-- Litigants Node (30°, bottom right) -->
                                 <circle class="ecosystem-node" id="node-litigants" data-entity="litigants" cx="321.24" cy="270" r="50" fill="#e2e8f0" stroke="#ffffff" stroke-width="4"/>
                                 <text x="321.24" y="268" text-anchor="middle" class="node-label" fill="#64748b" font-size="15" font-weight="600">LITIGANTS</text>
-                                <text x="321.24" y="342" text-anchor="middle" class="node-subtext" data-entity="litigants">
-                                    <tspan x="321.24" dy="0">Shifts legal cost risk</tspan>
-                                    <tspan x="321.24" dy="14">and accesses funding</tspan>
-                                </text>
                                 
                                 <!-- Sponsors Node (150°, bottom left) -->
                                 <circle class="ecosystem-node" id="node-sponsors" data-entity="sponsors" cx="78.76" cy="270" r="50" fill="#e2e8f0" stroke="#ffffff" stroke-width="4"/>
                                 <text x="78.76" y="268" text-anchor="middle" class="node-label" fill="#64748b" font-size="15" font-weight="600">SPONSORS</text>
-                                <text x="78.76" y="342" text-anchor="middle" class="node-subtext" data-entity="sponsors">
-                                    <tspan x="78.76" dy="0">Provides capital</tspan>
-                                    <tspan x="78.76" dy="14">and shares in returns</tspan>
-                                </text>
                             </svg>
                         </div>
                     </div>

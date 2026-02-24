@@ -1719,36 +1719,43 @@ html {
 }
 
 .team-member-card {
-    padding: 2rem;
-    background-color: var(--color-white);
-    border-radius: var(--radius-xl);
-    border: 1px solid var(--color-slate-200);
-    text-align: center;
+    padding: 0;
+    background-color: transparent;
+    border-radius: 0;
+    border: none;
+    text-align: left;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .team-member-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
 }
 
 .team-member-card .member-avatar {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
+    width: 100%;
+    margin: 0;
+    border-radius: 1.25rem;
+    overflow: hidden;
     background-color: var(--color-slate-200);
-    margin: 0 auto 1.5rem;
+}
+
+.team-member-card .member-avatar img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    display: block;
 }
 
 .team-member-card .member-info h4 {
-    margin-bottom: 0.5rem;
+    margin-top: 0.75rem;
+    margin-bottom: 0.25rem;
     color: var(--color-theme-3);
 }
 
 .team-member-card .member-role {
     font-size: var(--text-sm);
     color: var(--color-slate-500);
-    margin-bottom: 1rem;
+    margin-bottom: 0.75rem;
     text-transform: none;
 }
 
@@ -1757,6 +1764,35 @@ html {
     color: var(--color-text);
     font-size: var(--text-sm);
     line-height: 1.6;
+}
+
+.team-member-card .member-actions {
+    display: flex;
+    gap: 0.75rem;
+    margin-top: 0.5rem;
+}
+
+.member-social-link {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f3f4f6;
+    color: #111827;
+    transition: background-color 0.2s ease, color 0.2s ease, transform 0.15s ease;
+}
+
+.member-social-link svg {
+    width: 14px;
+    height: 14px;
+}
+
+.member-social-link:hover {
+    background-color: #f3f4f6;
+    color: var(--color-theme-3);
+    transform: translateY(-1px);
 }
 
 @media (min-width: 768px) {

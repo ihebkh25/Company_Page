@@ -33,21 +33,55 @@
 
     <!-- Main Content -->
     <main class="main-content">
-        <!-- Hero Section -->
+        <!-- Hero: About AEQUIFIN title + description -->
         <section class="hero-section">
             <div class="hero-content">
                 <div class="hero-text">
                     <h1>About AEQUIFIN</h1>
-                    <p class="hero-subtitle">Transparency, Trust, and Excellence in Litigation Financing</p>
                     <p class="hero-description">
                         AEQUIFIN is an online marketplace for litigation funding. Litigants (private individuals and companies), 
                         lawyers and sponsors are connected with each other to finance and enforce legal matters – with and without 
                         a financial objective.
                     </p>
                 </div>
-                
-                <!-- Interactive Ecosystem Visualization -->
-                <div class="ecosystem-visualization">
+            </div>
+        </section>
+
+        <!-- Who is AEQUIFIN? -->
+        <section id="who-is-aequifin" class="content-section no-animate">
+            <div class="section-header">
+                <h2>Who is AEQUIFIN?</h2>
+                <hr>
+            </div>
+            <div class="story-section who-section">
+                <div class="story-content who-layout">
+                    <div class="who-text">
+                        <h3 class="who-heading">Welcome to AEQUIFIN</h3>
+                        <p class="text-lg who-body">
+                            AEQUIFIN is an innovative online marketplace for litigation funding. The AEQUIFIN platform provides direct and transparent access to litigation funding. Litigants (private individuals and companies), lawyers and sponsors are connected with each other to finance and enforce legal matters – with and without a financial objective.
+                        </p>
+                    </div>
+                    <div class="who-video">
+                        <div class="who-video-wrapper">
+                            <a href="https://player.vimeo.com/a99bec9d-4ef0-4c6b-a76d-9be8379ead0e" target="_blank" rel="noopener" class="who-video-link">
+                                <img 
+                                    src="assets/Welcome-to-AEQUIFIN-EN-1.png" 
+                                    alt="Welcome to AEQUIFIN video thumbnail" 
+                                    class="who-video-thumbnail who-video-thumbnail-base">
+                                <img 
+                                    src="assets/Welcome-to-AEQUIFIN-EN-2.png" 
+                                    alt="" 
+                                    class="who-video-thumbnail who-video-thumbnail-hover">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Interactive Ecosystem Visualization (gamified section) -->
+        <section class="content-section ecosystem-section">
+            <div class="ecosystem-visualization">
                     <div class="ecosystem-text-column">
                         <div class="ecosystem-item" data-target="litigants">
                             <h4>LITIGANTS</h4>
@@ -56,9 +90,9 @@
                             </p>
                         </div>
                         <div class="ecosystem-item" data-target="lawyers">
-                            <h4>LAWYERS</h4>
+                            <h4>LAWFIRMS</h4>
                             <p>
-                                <strong class="highlight-value">Lawyers</strong> can find sponsors for existing mandates and conduct litigation. They also gain access to new clients.
+                                <strong class="highlight-value">Lawfirms</strong> can find sponsors for existing mandates and conduct litigation. They also gain access to new clients.
                             </p>
                         </div>
                         <div class="ecosystem-item" data-target="sponsors">
@@ -96,65 +130,31 @@
                                 
                                 <!-- Lawyers Node (-90°, top) -->
                                 <circle class="ecosystem-node" id="node-lawyers" data-entity="lawyers" cx="200" cy="60" r="50" fill="#e2e8f0" stroke="#ffffff" stroke-width="4"/>
-                                <text x="200" y="58" text-anchor="middle" class="node-label" fill="#64748b" font-size="15" font-weight="600">LAWYERS</text>
+                                <text x="200" y="60" text-anchor="middle" dominant-baseline="middle" class="node-label" fill="#64748b" font-size="15" font-weight="600">LAWFIRMS</text>
                                 <text x="200" y="132" text-anchor="middle" class="node-subtext" data-entity="lawyers">
-                                    <tspan x="200" dy="0">Brings legal expertise</tspan>
-                                    <tspan x="200" dy="14">and manages cases</tspan>
+                                    <tspan x="200" dy="0">Bring legal expertise</tspan>
+                                    <tspan x="200" dy="14">and manage cases</tspan>
                                 </text>
                                 
                                 <!-- Litigants Node (30°, bottom right) -->
                                 <circle class="ecosystem-node" id="node-litigants" data-entity="litigants" cx="321.24" cy="270" r="50" fill="#e2e8f0" stroke="#ffffff" stroke-width="4"/>
-                                <text x="321.24" y="268" text-anchor="middle" class="node-label" fill="#64748b" font-size="15" font-weight="600">LITIGANTS</text>
+                                <text x="321.24" y="270" text-anchor="middle" dominant-baseline="middle" class="node-label" fill="#64748b" font-size="15" font-weight="600">LITIGANTS</text>
                                 <text x="321.24" y="342" text-anchor="middle" class="node-subtext" data-entity="litigants">
-                                    <tspan x="321.24" dy="0">Shifts legal cost risk</tspan>
-                                    <tspan x="321.24" dy="14">and accesses funding</tspan>
+                                    <tspan x="321.24" dy="0">Shift legal cost risk</tspan>
+                                    <tspan x="321.24" dy="14">and access funding</tspan>
                                 </text>
                                 
                                 <!-- Sponsors Node (150°, bottom left) -->
                                 <circle class="ecosystem-node" id="node-sponsors" data-entity="sponsors" cx="78.76" cy="270" r="50" fill="#e2e8f0" stroke="#ffffff" stroke-width="4"/>
-                                <text x="78.76" y="268" text-anchor="middle" class="node-label" fill="#64748b" font-size="15" font-weight="600">SPONSORS</text>
+                                <text x="78.76" y="270" text-anchor="middle" dominant-baseline="middle" class="node-label" fill="#64748b" font-size="15" font-weight="600">SPONSORS</text>
                                 <text x="78.76" y="342" text-anchor="middle" class="node-subtext" data-entity="sponsors">
-                                    <tspan x="78.76" dy="0">Provides capital</tspan>
-                                    <tspan x="78.76" dy="14">and shares in returns</tspan>
+                                    <tspan x="78.76" dy="0">Provide capital</tspan>
+                                    <tspan x="78.76" dy="14">and share in returns</tspan>
                                 </text>
                             </svg>
                         </div>
                     </div>
                 </div>
-                
-            </div>
-        </section>
-
-        <!-- Who is AEQUIFIN? -->
-        <section id="who-is-aequifin" class="content-section no-animate">
-            <div class="section-header">
-                <h2>Who is AEQUIFIN?</h2>
-                <hr>
-            </div>
-            <div class="story-section who-section">
-                <div class="story-content who-layout">
-                    <div class="who-text">
-                        <h3 class="who-heading">Welcome to AEQUIFIN</h3>
-                        <p class="text-lg who-body">
-                            AEQUIFIN is an innovative online marketplace for litigation funding. The AEQUIFIN platform provides direct and transparent access to litigation funding. Litigants (private individuals and companies), lawyers and sponsors are connected with each other to finance and enforce legal matters – with and without a financial objective.
-                        </p>
-                    </div>
-                    <div class="who-video">
-                        <div class="who-video-wrapper">
-                            <a href="https://player.vimeo.com/e8501888-25dc-430a-9099-87991ecb3561" target="_blank" rel="noopener" class="who-video-link">
-                                <img 
-                                    src="assets/Welcome-to-AEQUIFIN-EN-1.png" 
-                                    alt="Welcome to AEQUIFIN video thumbnail" 
-                                    class="who-video-thumbnail who-video-thumbnail-base">
-                                <img 
-                                    src="assets/Welcome-to-AEQUIFIN-EN-2.png" 
-                                    alt="" 
-                                    class="who-video-thumbnail who-video-thumbnail-hover">
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </section>
 
         <!-- Why Trust AEQUIFIN? -->
@@ -176,42 +176,30 @@
                             model is built on trust and fairness.
                         </p>
                         <div class="trust-feature-actions">
-                            <a href="https://www.aequifin.com/en/how-it-works" class="button-primary">View Our Process</a>
+                            <a href="https://www.aequifin.com/de/faqs/" class="button-primary">View Our Process</a>
                         </div>
                     </div>
                     <div class="trust-feature-visual">
-                        <div class="trust-visual-card">
+                        <div class="trust-visual-card trust-stats-card">
                             <div class="trust-visual-header">
-                                <h4>Evaluation Process</h4>
+                                <h4>Key Figures Behind Our Success</h4>
                             </div>
-                            <div class="trust-process-steps">
-                                <div class="process-step">
-                                    <div class="process-step-number">1</div>
-                                    <div class="process-step-content">
-                                        <h5>Initial Review</h5>
-                                        <p>Case documentation analysis</p>
-                                    </div>
+                            <div class="trust-stats-grid">
+                                <div class="trust-stat-item">
+                                    <span class="trust-stat-value">&gt;100</span>
+                                    <span class="trust-stat-label">Law firms registered</span>
                                 </div>
-                                <div class="process-step">
-                                    <div class="process-step-number">2</div>
-                                    <div class="process-step-content">
-                                        <h5>Legal Assessment</h5>
-                                        <p>Expert legal team evaluation</p>
-                                    </div>
+                                <div class="trust-stat-item">
+                                    <span class="trust-stat-value">76%</span>
+                                    <span class="trust-stat-label">Repeat sponsors</span>
                                 </div>
-                                <div class="process-step">
-                                    <div class="process-step-number">3</div>
-                                    <div class="process-step-content">
-                                        <h5>Risk Analysis</h5>
-                                        <p>Financial and risk assessment</p>
-                                    </div>
+                                <div class="trust-stat-item">
+                                    <span class="trust-stat-value">€250M</span>
+                                    <span class="trust-stat-label">In case inquiries</span>
                                 </div>
-                                <div class="process-step">
-                                    <div class="process-step-number">4</div>
-                                    <div class="process-step-content">
-                                        <h5>Final Decision</h5>
-                                        <p>Multi-stage approval process</p>
-                                    </div>
+                                <div class="trust-stat-item">
+                                    <span class="trust-stat-value">3X</span>
+                                    <span class="trust-stat-label">Average multiple</span>
                                 </div>
                             </div>
                         </div>
@@ -319,6 +307,159 @@
                         </div>
                     </div>
                 </div>
+                <div class="team-member-card">
+                    <div class="member-avatar">
+                        <img src="assets/Patrick Biagosch.jpg" alt="Dr. Patrick Biagosch">
+                    </div>
+                    <div class="member-info">
+                        <h4>Dr. Patrick Biagosch</h4>
+                        <p class="member-role">Lawyer &amp; Co-Founder AEQUIFIN</p>
+                        <div class="member-actions">
+                            <a href="https://www.linkedin.com/company/aequifin/" target="_blank" rel="noopener" class="member-social-link" aria-label="View LinkedIn profile of Dr. Patrick Biagosch">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"></path></svg>
+                            </a>
+                            <a href="mailto:info@aequifin.com" class="member-social-link" aria-label="Email Dr. Patrick Biagosch">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"></path></svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="team-member-card">
+                    <div class="member-avatar">
+                        <img src="assets/Stefan Schmidt-Ammon AEQUIFIN.jpg" alt="Stefan Schmidt-Ammon">
+                    </div>
+                    <div class="member-info">
+                        <h4>Stefan Schmidt-Ammon</h4>
+                        <p class="member-role">Economist &amp; Co-Founder AEQUIFIN</p>
+                        <div class="member-actions">
+                            <a href="https://www.linkedin.com/company/aequifin/" target="_blank" rel="noopener" class="member-social-link" aria-label="View LinkedIn profile of Stefan Schmidt-Ammon">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"></path></svg>
+                            </a>
+                            <a href="mailto:info@aequifin.com" class="member-social-link" aria-label="Email Stefan Schmidt-Ammon">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"></path></svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="team-member-card">
+                    <div class="member-avatar">
+                        <img src="assets/taha-hamdi.jpg" alt="Taha Hamdi">
+                    </div>
+                    <div class="member-info">
+                        <h4>Taha Hamdi</h4>
+                        <p class="member-role">Junior Developer</p>
+                        <div class="member-actions">
+                            <a href="https://www.linkedin.com/company/aequifin/" target="_blank" rel="noopener" class="member-social-link" aria-label="View LinkedIn profile of Taha Hamdi">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"></path></svg>
+                            </a>
+                            <a href="mailto:info@aequifin.com" class="member-social-link" aria-label="Email Taha Hamdi">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"></path></svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="team-member-card">
+                    <div class="member-avatar">
+                        <img src="assets/iheb-khemila1.png" alt="Iheb Khemila">
+                    </div>
+                    <div class="member-info">
+                        <h4>Iheb Khemila</h4>
+                        <p class="member-role">Junior Developer and SEO Expert</p>
+                        <div class="member-actions">
+                            <a href="https://www.linkedin.com/company/aequifin/" target="_blank" rel="noopener" class="member-social-link" aria-label="View LinkedIn profile of Iheb Khemila">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"></path></svg>
+                            </a>
+                            <a href="mailto:info@aequifin.com" class="member-social-link" aria-label="Email Iheb Khemila">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"></path></svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="team-member-card">
+                    <div class="member-avatar">
+                        <img src="assets/Mattihas-brinkmann.jpg" alt="Matthias Brinckman">
+                    </div>
+                    <div class="member-info">
+                        <h4>Matthias Brinckman</h4>
+                        <p class="member-role">Limittrustee AEQUIFIN &amp; Lawyer</p>
+                        <div class="member-actions">
+                            <a href="https://www.linkedin.com/company/aequifin/" target="_blank" rel="noopener" class="member-social-link" aria-label="View LinkedIn profile of Matthias Brinckman">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"></path></svg>
+                            </a>
+                            <a href="mailto:info@aequifin.com" class="member-social-link" aria-label="Email Matthias Brinckman">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"></path></svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="team-member-card">
+                    <div class="member-avatar">
+                        <img src="assets/Burkhard-Lohmann.png" alt="Burkhard Lohmann">
+                    </div>
+                    <div class="member-info">
+                        <h4>Burkhard Lohmann</h4>
+                        <p class="member-role">Auditor</p>
+                        <div class="member-actions">
+                            <a href="https://www.linkedin.com/company/aequifin/" target="_blank" rel="noopener" class="member-social-link" aria-label="View LinkedIn profile of Burkhard Lohmann">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"></path></svg>
+                            </a>
+                            <a href="mailto:info@aequifin.com" class="member-social-link" aria-label="Email Burkhard Lohmann">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"></path></svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="team-member-card">
+                    <div class="member-avatar">
+                        <img src="assets/thomas-m%C3%BCller.1024x1024.jpg" alt="Dr. Thomas Müller">
+                    </div>
+                    <div class="member-info">
+                        <h4>Dr. Thomas Müller</h4>
+                        <p class="member-role">Chairman of the Board</p>
+                        <div class="member-actions">
+                            <a href="https://www.linkedin.com/company/aequifin/" target="_blank" rel="noopener" class="member-social-link" aria-label="View LinkedIn profile of Dr. Thomas Müller">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"></path></svg>
+                            </a>
+                            <a href="mailto:info@aequifin.com" class="member-social-link" aria-label="Email Dr. Thomas Müller">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"></path></svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="team-member-card">
+                    <div class="member-avatar">
+                        <img src="assets/Kim Kardel Farbe horizontal gespiegelt.png" alt="Kim Kardel">
+                    </div>
+                    <div class="member-info">
+                        <h4>Kim Kardel</h4>
+                        <p class="member-role">Member of the Board</p>
+                        <div class="member-actions">
+                            <a href="https://www.linkedin.com/company/aequifin/" target="_blank" rel="noopener" class="member-social-link" aria-label="View LinkedIn profile of Kim Kardel">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"></path></svg>
+                            </a>
+                            <a href="mailto:info@aequifin.com" class="member-social-link" aria-label="Email Kim Kardel">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"></path></svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="team-member-card">
+                    <div class="member-avatar">
+                        <img src="assets/oswald_wolfgang.jpg" alt="Wolfgang Oswald">
+                    </div>
+                    <div class="member-info">
+                        <h4>Wolfgang Oswald</h4>
+                        <p class="member-role">Tax advisor, lawyer and member of the supervisory board</p>
+                        <div class="member-actions">
+                            <a href="https://www.linkedin.com/company/aequifin/" target="_blank" rel="noopener" class="member-social-link" aria-label="View LinkedIn profile of Wolfgang Oswald">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"></path></svg>
+                            </a>
+                            <a href="mailto:info@aequifin.com" class="member-social-link" aria-label="Email Wolfgang Oswald">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"></path></svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -356,7 +497,7 @@
                             <path d="M26.133 22.401c-3.235 0-5.867-2.632-5.867-5.867 0-0.295 0.238-0.534 0.533-0.534h0.918l3.851-11.2h-9.036v24.533h4.8c0.295 0 0.533 0.239 0.533 0.534s-0.238 0.533-0.533 0.533h-10.667c-0.295 0-0.533-0.238-0.533-0.533s0.238-0.534 0.533-0.534h4.8v-24.533h-9.036l3.852 11.2h0.918c0.295 0 0.533 0.239 0.533 0.534 0 3.235-2.632 5.867-5.867 5.867s-5.867-2.632-5.867-5.867c0-0.295 0.238-0.534 0.533-0.534h0.918l3.851-11.2h-2.636c-0.295 0-0.533-0.238-0.533-0.533s0.238-0.533 0.533-0.533h12.8v-1.6c0-0.295 0.238-0.533 0.533-0.533s0.533 0.238 0.533 0.533v1.6h12.8c0.295 0 0.533 0.238 0.533 0.533s-0.238 0.533-0.533 0.533h-2.636l3.852 11.2h0.918c0.295 0 0.533 0.239 0.533 0.534 0 3.235-2.632 5.867-5.867 5.867zM1.832 17.068c-0.001 0-0.002-0.001-0.003-0.001h-0.733c0.266 2.397 2.303 4.267 4.77 4.267s4.504-1.87 4.77-4.267h-8.803c-0.001 0-0.002 0.001-0.002 0.001zM2.579 16h6.575l-3.288-9.56-3.287 9.56zM26.133 6.44l-3.287 9.56h6.575l-3.288-9.56zM22.101 17.067c-0.001 0-0.002 0.001-0.002 0.001s-0.002-0.001-0.003-0.001h-0.733c0.266 2.397 2.303 4.267 4.77 4.267s4.504-1.87 4.77-4.267h-8.803z"></path>
                         </svg>
                     </div>
-                    <p>The platform provides IT infrastructure and litigation funding know-how for the preparation of concrete legal proceedings for lawyers, companies, institutions and private individuals.</p>
+                    <p>The platform provides IT infrastructure and litigation funding know-how for the preparation of specific legal proceedings for lawyers, companies, institutions and private individuals.</p>
                     <a href="#" class="solution-link">More information</a>
                 </div>
             </div>
@@ -370,32 +511,25 @@
             </div>
             <div class="recognition-media-section">
                 <div class="recognition-side">
-                    <h3>Industry Recognition</h3>
+                    <h3>Customers and Experts Recognition</h3>
                     <p class="text-lg">
-                        Our commitment to excellence and ethical practices has been recognized by industry 
-                        leaders and regulatory bodies.
+                        What our clients and industry experts say about working with Aequifin
                     </p>
-                    <div class="recognition-badges">
-                        <div class="recognition-badge-large">
-                            <div class="badge-indicator"></div>
-                            <div class="badge-content">
-                                <h4>Economic Affairs and Energy</h4>
-                                <p>Supported by German Federal Ministry for Economic Affairs and Energy</p>
-                            </div>
+                    <div class="testimonial-cards">
+                        <div class="testimonial-card">
+                            <p class="testimonial-name">Corporate Client</p>
+                            <p class="testimonial-quote">"AEQUIFIN provided transparent, professional litigation funding that allowed us to pursue our case without financial strain."</p>
+                            <a href="https://www.aequifin.com/en/how-it-works" class="testimonial-cta">Learn how we can help →</a>
                         </div>
-                        <div class="recognition-badge-large">
-                            <div class="badge-indicator"></div>
-                            <div class="badge-content">
-                                <h4>Fully Regulated</h4>
-                                <p>Compliant with German financial services regulations</p>
-                            </div>
+                        <div class="testimonial-card">
+                            <p class="testimonial-name">Law Firm Partner</p>
+                            <p class="testimonial-quote">"Working with AEQUIFIN gives our clients access to capital and gives us the confidence to take on complex litigation."</p>
+                            <a href="https://www.aequifin.com/en/how-it-works" class="testimonial-cta">Explore for law firms →</a>
                         </div>
-                        <div class="recognition-badge-large">
-                            <div class="badge-indicator"></div>
-                            <div class="badge-content">
-                                <h4>Industry Member</h4>
-                                <p>Member of leading legal finance associations</p>
-                            </div>
+                        <div class="testimonial-card">
+                            <p class="testimonial-name">Industry Expert</p>
+                            <p class="testimonial-quote">"AEQUIFIN is setting the standard for transparency and ethics in litigation financing in the German market."</p>
+                            <a href="https://www.aequifin.com/de/faqs/" class="testimonial-cta">Read more →</a>
                         </div>
                     </div>
                 </div>
@@ -454,16 +588,6 @@
                         </div>
                         <a href="tel:+498927372700" class="contact-link">+49 89 2737270-0</a>
                         <p class="contact-card-note">Monday - Friday, 9:00 AM - 6:00 PM CET</p>
-                    </div>
-                    <div class="contact-card">
-                        <div class="contact-card-header">
-                            <h4>Visit Us</h4>
-                        </div>
-                        <div class="contact-address">
-                            <p>AEQUIFIN GmbH & Co. KGaA</p>
-                            <p>Bavariafilmpl. 7</p>
-                            <p>82031 Grünwald, Germany</p>
-                        </div>
                     </div>
                 </div>
                 <div class="contact-cta-redesign">

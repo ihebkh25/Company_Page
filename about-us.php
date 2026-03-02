@@ -513,29 +513,6 @@ $pageTitle = "About Us - AEQUIFIN";
                 <hr>
             </div>
             <div class="recognition-media-section">
-                <div class="recognition-side">
-                    <h3>Customers and Experts Recognition</h3>
-                    <p class="text-lg">
-                        What our clients and industry experts say about working with Aequifin
-                    </p>
-                    <div class="testimonial-cards">
-                        <div class="testimonial-card">
-                            <p class="testimonial-name">Corporate Client</p>
-                            <p class="testimonial-quote">"AEQUIFIN provided transparent, professional litigation funding that allowed us to pursue our case without financial strain."</p>
-                            <a href="https://www.aequifin.com/en/how-it-works" class="testimonial-cta">Learn how we can help →</a>
-                        </div>
-                        <div class="testimonial-card">
-                            <p class="testimonial-name">Law Firm Partner</p>
-                            <p class="testimonial-quote">"Working with AEQUIFIN gives our clients access to capital and gives us the confidence to take on complex litigation."</p>
-                            <a href="https://www.aequifin.com/en/how-it-works" class="testimonial-cta">Explore for law firms →</a>
-                        </div>
-                        <div class="testimonial-card">
-                            <p class="testimonial-name">Industry Expert</p>
-                            <p class="testimonial-quote">"AEQUIFIN is setting the standard for transparency and ethics in litigation financing in the German market."</p>
-                            <a href="https://www.aequifin.com/de/faqs/" class="testimonial-cta">Read more →</a>
-                        </div>
-                    </div>
-                </div>
                 <div class="media-side">
                     <h3>In The Press</h3>
                     <p class="text-lg">
@@ -557,6 +534,35 @@ $pageTitle = "About Us - AEQUIFIN";
                             <div class="media-outlet">Big News Network</div>
                             <p class="media-quote">"Alternative Investments with AEQUIFIN: 2026 Litigation Funding Deserves Attention"</p>
                             <a href="https://www.bignewsnetwork.com/news/278631805/alternative-investments-with-aequifin-2026-litigation-funding-deserves-attention" class="media-link" target="_blank" rel="noopener noreferrer">Read Article →</a>
+                        </div>
+                        <div class="media-mention">
+                            <div class="media-outlet">TechBullion</div>
+                            <p class="media-quote">"Litigation Funding 2.0: How AEQUIFIN Brings Alternative Returns to Serious Investors"</p>
+                            <a href="https://techbullion.com/litigation-funding-2-0-how-aequifin-brings-alternative-returns-to-serious-investors/" class="media-link" target="_blank" rel="noopener noreferrer">Read Article →</a>
+                        </div>
+                    </div>
+
+                    <div class="press-testimonials">
+                        <h4 class="press-testimonials-title">Testimonials</h4>
+                        <div class="testimonial-cards">
+                            <div class="testimonial-card">
+                                <div class="testimonial-mark">“</div>
+                                <p class="testimonial-quote">Der ursprüngliche Gedanke, damit quasi jedem, der einen guten, gerichtlich durchsetzbaren Anspruch hat, zu seinem „guten Recht“ zu verhelfen, ist jedoch über die letzten Jahre verloren gegangen. (…) Die Prozessfinanzierungsplattform AEQUIFIN ist einen anderen Weg gegangen. Digitale Plattformmodelle gelten in der Branche zunehmend als strukturelle Weiterentwicklung klassischer Finanzierungsansätze.</p>
+                                <p class="testimonial-name">Dr. Arndt Eversberg</p>
+                                <a href="https://www.aequifin.com/en/team-company" class="testimonial-cta">Mehr über Dr. Arndt Eversberg →</a>
+                            </div>
+                            <div class="testimonial-card">
+                                <div class="testimonial-mark">“</div>
+                                <p class="testimonial-quote">Die Prozessfinanzierungsplattform AEQUIFIN ist einen anderen Weg gegangen. Digitale Plattformmodelle gelten in der Branche zunehmend als strukturelle Weiterentwicklung klassischer Finanzierungsansätze. (…) Im Gegensatz zu den gewerblichen Finanzierern hat hier also quasi jeder die Möglichkeit, jemanden anderen zu helfen und an einem Erfolg mitzuverdienen.</p>
+                                <p class="testimonial-name">Dr. Arndt Eversberg</p>
+                                <a href="https://www.aequifin.com/en/team-company" class="testimonial-cta">Zur Einschätzung von Dr. Eversberg →</a>
+                            </div>
+                            <div class="testimonial-card">
+                                <div class="testimonial-mark">“</div>
+                                <p class="testimonial-quote">Das Manager Magazin berichtet unter dem Titel „Meike Müller attackiert Investor Elgeti“ in seiner gerade erschienenen Oktober-Ausgabe über den Rechtsfall „Anspruch auf Vergütung für Aktientransaktion“ und weist darauf hin, dass die Betroffene eine Prozessfinanzierung über die AEQUIFIN-Plattform sucht.</p>
+                                <p class="testimonial-name">manager magazin</p>
+                                <a href="https://www.manager-magazin.de/unternehmen/industrie/francotyp-postalia-investor-rolf-elgeti-ist-mit-neuer-klage-konfrontiert-a-e4be3914-7171-4e32-88ce-a935ab5c27a0" class="testimonial-cta">Zum Artikel im manager magazin →</a>
+                            </div>
                         </div>
                     </div>
                 </div>

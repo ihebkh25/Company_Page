@@ -160,7 +160,7 @@ document.addEventListener('DOMContentLoaded', function() {
         node.addEventListener('mouseenter', () => {
             highlightElement(nodeId);
         });
-
+        
         node.addEventListener('mouseleave', () => {
             resetVisualization();
         });

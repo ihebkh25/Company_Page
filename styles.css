@@ -2189,7 +2189,8 @@ html {
 
 .press-testimonials-title {
     margin: 0 0 1rem 0;
-    font-size: var(--text-lg);
+    font-size: 1.5rem;
+    font-weight: 600;
     color: var(--color-theme-3);
 }
 

@@ -309,7 +309,7 @@ button {
     display: grid;
     grid-template-columns: 1fr;
     gap: 3rem;
-    align-items: center;
+    align-items: stretch;
 }
 
 @media (min-width: 768px) {
@@ -368,7 +368,7 @@ button {
 /* Trust Visual Cards */
 .trust-feature-visual {
     display: flex;
-    align-items: center;
+    align-items: start;
     justify-content: center;
 }
 
@@ -379,6 +379,8 @@ button {
     border-radius: var(--radius-xl);
     padding: 2rem;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
 }
 
 .trust-visual-header {
@@ -491,43 +493,40 @@ button {
     color: var(--color-slate-500);
 }
 
-/* Trust Stats Grid (Statistics about AEQUIFIN) */
-.trust-stats-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.25rem;
+/* Trust Numbers Card (AEQUIFIN in Numbers) */
+.trust-numbers-card {
+    padding: 2rem 2rem;
 }
 
-.trust-stat-item {
+.trust-numbers-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.trust-number-row {
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    padding: 1rem 0.75rem;
-    background-color: var(--color-slate-50);
+    padding: 1.25rem 0.75rem;
     border-radius: var(--radius-lg);
-    border: 1px solid var(--color-slate-200);
+    background-color: var(--color-slate-50);
 }
 
-.trust-stat-item .trust-stat-value {
-    display: block;
-    font-size: 1.5rem;
-    font-weight: 700;
+.trust-number-value {
+    font-size: 2rem;
+    font-weight: 800;
     color: var(--color-theme-3);
-    margin-bottom: 0.25rem;
+    line-height: 1;
+    margin-bottom: 0.4rem;
 }
 
-.trust-stat-item .trust-stat-label {
-    display: block;
-    font-size: var(--text-sm);
+.trust-number-label {
+    font-size: 0.8rem;
+    font-weight: 500;
     color: var(--color-slate-600);
     line-height: 1.3;
-}
-
-@media (min-width: 640px) {
-    .trust-stats-grid {
-        grid-template-columns: repeat(4, 1fr);
-    }
 }
 
 /* Revenue Visualization */
@@ -1369,6 +1368,44 @@ html {
     width: 100%;
     height: 100%;
     display: block;
+    cursor: pointer;
+}
+
+.who-video-play {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 64px;
+    height: 64px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-theme-3);
+    transition: transform 0.2s ease, background 0.2s ease;
+    pointer-events: none;
+}
+
+.who-video-play svg {
+    width: 28px;
+    height: 28px;
+    margin-left: 3px;
+}
+
+.who-video-link:hover .who-video-play {
+    transform: translate(-50%, -50%) scale(1.1);
+    background: rgba(255, 255, 255, 1);
+}
+
+.who-video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
 }
 
 .who-video-thumbnail {
@@ -1411,6 +1448,21 @@ html {
         flex: 1;
         padding-right: 2rem;
     }
+}
+
+#who-is-aequifin .who-layout.video-expanded {
+    flex-direction: column-reverse;
+    gap: 2rem;
+}
+
+#who-is-aequifin .who-layout.video-expanded .who-text {
+    padding-right: 0;
+    width: 100%;
+}
+
+#who-is-aequifin .who-layout.video-expanded .who-video {
+    width: 100%;
+    flex: none;
 }
 
 .who-heading {
@@ -1847,6 +1899,162 @@ html {
     }
 }
 
+/* Team Member Detail Panel */
+.team-member-card {
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.team-member-card.selected {
+    transform: scale(1.05);
+}
+
+.team-member-card.selected .member-avatar {
+    outline: 3px solid var(--color-theme-2);
+    outline-offset: 3px;
+    border-radius: 1.25rem;
+}
+
+.team-member-detail {
+    grid-column: 1 / -1;
+    background: linear-gradient(135deg, var(--color-slate-50) 0%, var(--color-white) 100%);
+    border: 1px solid var(--color-slate-200);
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    transition: max-height 0.4s ease, opacity 0.3s ease, padding 0.4s ease;
+    max-height: 0;
+    opacity: 0;
+    padding: 0 2rem;
+}
+
+.team-member-detail.open {
+    max-height: 400px;
+    opacity: 1;
+    padding: 2rem;
+}
+
+.detail-content {
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+    position: relative;
+}
+
+.detail-close {
+    position: absolute;
+    top: -0.5rem;
+    right: 0;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: 1px solid var(--color-slate-200);
+    background-color: var(--color-white);
+    color: var(--color-slate-600);
+    font-size: 1.5rem;
+    line-height: 1;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.detail-close:hover {
+    background-color: var(--color-slate-100, #f1f5f9);
+    color: var(--color-theme-3);
+}
+
+.detail-avatar {
+    flex-shrink: 0;
+    width: 140px;
+    height: 140px;
+    border-radius: 1rem;
+    overflow: hidden;
+}
+
+.detail-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.detail-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.detail-name {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-theme-3);
+}
+
+.detail-role {
+    margin: 0;
+    font-size: 1rem;
+    color: var(--color-slate-600);
+    font-weight: 500;
+}
+
+.detail-key-info {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 0.25rem;
+}
+
+.detail-key-info p {
+    margin: 0;
+    font-size: var(--text-sm);
+    color: var(--color-slate-500);
+}
+
+.detail-linkedin {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+    padding: 0.5rem 1rem;
+    background-color: #f3f4f6;
+    border-radius: 9999px;
+    color: var(--color-slate-700);
+    text-decoration: none;
+    font-size: var(--text-sm);
+    font-weight: 500;
+    width: fit-content;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.detail-linkedin svg {
+    width: 16px;
+    height: 16px;
+}
+
+.detail-linkedin:hover {
+    background-color: #f3f4f6;
+    color: var(--color-theme-3);
+}
+
+@media (max-width: 767px) {
+    .detail-content {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.25rem;
+    }
+
+    .detail-avatar {
+        width: 100px;
+        height: 100px;
+    }
+
+    .detail-key-info {
+        flex-direction: column;
+        gap: 0.25rem;
+    }
+}
+
 /* Testimonials Grid Redesign */
 .testimonials-grid-redesign {
     display: grid;
@@ -2182,23 +2390,73 @@ html {
     color: var(--color-text);
 }
 
-/* Testimonial cards (Recognition & Media) */
-.press-testimonials {
-    margin-top: 2.5rem;
+/* Testimonials Section (independent from In The Press) */
+.testimonials-section {
+    position: relative;
 }
 
-.press-testimonials-title {
-    margin: 0 0 1rem 0;
-    font-size: 1.5rem;
-    font-weight: 600;
+.ts-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.ts-head h2 {
+    margin: 0;
+}
+
+.ts-nav {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.testimonial-arrow {
+    width: 36px;
+    height: 36px;
+    border-radius: 9999px;
+    border: 1px solid var(--color-slate-200);
+    background-color: var(--color-white);
     color: var(--color-theme-3);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 1.25rem;
+    line-height: 1;
+    padding: 0;
+    transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
 }
 
-.testimonial-cards {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-    margin-top: 1.5rem;
+.testimonial-arrow:hover:not(:disabled) {
+    background-color: #f1f5f9;
+    border-color: var(--color-theme-2);
+    color: var(--color-theme-3);
+    transform: translateY(-1px);
+    box-shadow: 0 2px 6px rgba(15, 23, 42, 0.15);
+}
+
+.testimonial-arrow:disabled {
+    opacity: 0.4;
+    cursor: default;
+    box-shadow: none;
+    transform: none;
+}
+
+.ts-swiper {
+    width: 100%;
+    overflow: hidden;
+    padding-top: 1.5rem;
+    margin-top: -1.5rem;
+}
+
+.ts-swiper .swiper-wrapper {
+    align-items: stretch;
+}
+
+.ts-swiper .swiper-slide {
+    height: auto;
 }
 
 .testimonial-card {
@@ -2211,12 +2469,8 @@ html {
     border: 1px solid var(--color-slate-200);
     box-shadow: 0 1px 3px rgba(15, 23, 42, 0.06);
     transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
-}
-
-@media (min-width: 768px) {
-    .press-testimonials .testimonial-cards {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-    }
+    box-sizing: border-box;
+    height: auto;
 }
 
 .testimonial-mark {
@@ -2229,8 +2483,37 @@ html {
     color: var(--color-theme-3);
 }
 
+.testimonial-author {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-top: auto;
+    padding-top: 1rem;
+    border-top: 1px solid var(--color-slate-200);
+}
+
+.testimonial-author-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.testimonial-avatar {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background-color: var(--color-slate-200);
+    flex-shrink: 0;
+    overflow: hidden;
+}
+
+.testimonial-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
 .testimonial-name {
-    margin: auto 0 0.25rem 0;
+    margin: 0;
     font-weight: 600;
     color: var(--color-slate-700);
 }
@@ -2247,7 +2530,7 @@ html {
     color: var(--color-theme-3);
     font-weight: 500;
     text-decoration: none;
-    margin-top: 0.1rem;
+    font-size: var(--text-sm);
     transition: color 0.2s ease, transform 0.2s ease;
 }
 
@@ -2263,11 +2546,6 @@ html {
     border-color: var(--color-theme-2);
 }
 
-@media (min-width: 768px) {
-    .press-testimonials .testimonial-cards {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-    }
-}
 
 .media-mentions {
     display: grid;

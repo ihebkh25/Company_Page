@@ -7,6 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -38,21 +39,12 @@
             <div class="hero-content">
                 <div class="hero-text">
                     <h1>About AEQUIFIN</h1>
-                    <p class="hero-description">
-                        AEQUIFIN is an online marketplace for litigation funding. Litigants (private individuals and companies), 
-                        lawyers and sponsors are connected with each other to finance and enforce legal matters – with and without 
-                        a financial objective.
-                    </p>
                 </div>
             </div>
         </section>
 
-        <!-- Who is AEQUIFIN? -->
+        <!-- Who is AEQUIFIN? (content only, without extra heading) -->
         <section id="who-is-aequifin" class="content-section no-animate">
-            <div class="section-header">
-                <h2>Who is AEQUIFIN?</h2>
-                <hr>
-            </div>
             <div class="story-section who-section">
                 <div class="story-content who-layout">
                     <div class="who-text">
@@ -62,8 +54,8 @@
                         </p>
                     </div>
                     <div class="who-video">
-                        <div class="who-video-wrapper">
-                            <a href="https://player.vimeo.com/a99bec9d-4ef0-4c6b-a76d-9be8379ead0e" target="_blank" rel="noopener" class="who-video-link">
+                        <div class="who-video-wrapper" data-video-id="1103528334">
+                            <div class="who-video-link">
                                 <img 
                                     src="assets/Welcome-to-AEQUIFIN-EN-1.png" 
                                     alt="Welcome to AEQUIFIN video thumbnail" 
@@ -72,7 +64,10 @@
                                     src="assets/Welcome-to-AEQUIFIN-EN-2.png" 
                                     alt="" 
                                     class="who-video-thumbnail who-video-thumbnail-hover">
-                            </a>
+                                <div class="who-video-play">
+                                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -180,26 +175,26 @@
                         </div>
                     </div>
                     <div class="trust-feature-visual">
-                        <div class="trust-visual-card trust-stats-card">
+                        <div class="trust-visual-card trust-numbers-card">
                             <div class="trust-visual-header">
-                                <h4>Key Figures Behind Our Success</h4>
+                                <h4>AEQUIFIN in Numbers</h4>
                             </div>
-                            <div class="trust-stats-grid">
-                                <div class="trust-stat-item">
-                                    <span class="trust-stat-value">&gt;100</span>
-                                    <span class="trust-stat-label">Law firms registered</span>
+                            <div class="trust-numbers-list">
+                                <div class="trust-number-row">
+                                    <div class="trust-number-value">&gt;100</div>
+                                    <div class="trust-number-label">Law firms registered</div>
                                 </div>
-                                <div class="trust-stat-item">
-                                    <span class="trust-stat-value">76%</span>
-                                    <span class="trust-stat-label">Repeat sponsors</span>
+                                <div class="trust-number-row">
+                                    <div class="trust-number-value">76%</div>
+                                    <div class="trust-number-label">Repeat sponsors</div>
                                 </div>
-                                <div class="trust-stat-item">
-                                    <span class="trust-stat-value">€250M</span>
-                                    <span class="trust-stat-label">In case inquiries</span>
+                                <div class="trust-number-row">
+                                    <div class="trust-number-value">€250M</div>
+                                    <div class="trust-number-label">In case inquiries</div>
                                 </div>
-                                <div class="trust-stat-item">
-                                    <span class="trust-stat-value">3X</span>
-                                    <span class="trust-stat-label">Average multiple</span>
+                                <div class="trust-number-row">
+                                    <div class="trust-number-value">3X</div>
+                                    <div class="trust-number-label">Average multiple</div>
                                 </div>
                             </div>
                         </div>
@@ -460,7 +455,28 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            
+                <div class="team-member-detail" style="display:none;">
+                    <div class="detail-content">
+                        <button class="detail-close" type="button" aria-label="Close">&times;</button>
+                        <div class="detail-avatar">
+                            <img src="" alt="">
+                        </div>
+                        <div class="detail-info">
+                            <h3 class="detail-name"></h3>
+                            <p class="detail-role"></p>
+                            <div class="detail-key-info">
+                                <p class="detail-company">AEQUIFIN GmbH</p>
+                                <p class="detail-location">Munich, Germany</p>
+                            </div>
+                            <a href="https://www.linkedin.com/company/aequifin/" target="_blank" rel="noopener" class="detail-linkedin">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"></path></svg>
+                                <span>View LinkedIn Profile</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+</div>
         </section>
 
         <!-- AEQUIFIN SOLUTIONS -->
@@ -503,64 +519,70 @@
             </div>
         </section>
 
-        <!-- Recognition & Media -->
+        <!-- In The Press -->
         <section class="content-section">
             <div class="section-header">
-                <h2>Recognition & Media</h2>
+                <h2>In The Press</h2>
                 <hr>
             </div>
-            <div class="recognition-media-section">
-                <div class="media-side">
-                    <h3>In The Press</h3>
-                    <p class="text-lg">
-                        Our innovative approach to litigation financing has garnered attention from media 
-                        outlets and industry experts.
-                    </p>
-                    <div class="media-mentions">
-                        <div class="media-mention">
-                            <div class="media-outlet">inkl</div>
-                            <p class="media-quote">"The Quiet $20B Market Reshaping Alternative Investments: AEQUIFIN Is Changing the Game"</p>
-                            <a href="https://www.inkl.com/news/the-quiet-20b-market-reshaping-alternative-investments-aequifin-is-changing-the-game" class="media-link" target="_blank" rel="noopener noreferrer">Read Article →</a>
-                        </div>
-                        <div class="media-mention">
-                            <div class="media-outlet">Barchart</div>
-                            <p class="media-quote">"AEQUIFIN Highlights Litigation Financing as a Leading Alternative Investment Asset Class for Investors"</p>
-                            <a href="https://www.barchart.com/story/news/35436760/aequifin-highlights-litigation-financing-as-a-leading-alternative-investment-asset-class-for-investors" class="media-link" target="_blank" rel="noopener noreferrer">Read Article →</a>
-                        </div>
-                        <div class="media-mention">
-                            <div class="media-outlet">Big News Network</div>
-                            <p class="media-quote">"Alternative Investments with AEQUIFIN: 2026 Litigation Funding Deserves Attention"</p>
-                            <a href="https://www.bignewsnetwork.com/news/278631805/alternative-investments-with-aequifin-2026-litigation-funding-deserves-attention" class="media-link" target="_blank" rel="noopener noreferrer">Read Article →</a>
-                        </div>
-                        <div class="media-mention">
-                            <div class="media-outlet">TechBullion</div>
-                            <p class="media-quote">"Litigation Funding 2.0: How AEQUIFIN Brings Alternative Returns to Serious Investors"</p>
-                            <a href="https://techbullion.com/litigation-funding-2-0-how-aequifin-brings-alternative-returns-to-serious-investors/" class="media-link" target="_blank" rel="noopener noreferrer">Read Article →</a>
-                        </div>
-                    </div>
+            <p class="text-lg">
+                Our innovative approach to litigation financing has garnered attention from media 
+                outlets and industry experts.
+            </p>
+            <div class="media-mentions">
+                <div class="media-mention">
+                    <div class="media-outlet">inkl</div>
+                    <p class="media-quote">"The Quiet $20B Market Reshaping Alternative Investments: AEQUIFIN Is Changing the Game"</p>
+                    <a href="https://www.inkl.com/news/the-quiet-20b-market-reshaping-alternative-investments-aequifin-is-changing-the-game" class="media-link" target="_blank" rel="noopener noreferrer">Read Article →</a>
+                </div>
+                <div class="media-mention">
+                    <div class="media-outlet">Barchart</div>
+                    <p class="media-quote">"AEQUIFIN Highlights Litigation Financing as a Leading Alternative Investment Asset Class for Investors"</p>
+                    <a href="https://www.barchart.com/story/news/35436760/aequifin-highlights-litigation-financing-as-a-leading-alternative-investment-asset-class-for-investors" class="media-link" target="_blank" rel="noopener noreferrer">Read Article →</a>
+                </div>
+                <div class="media-mention">
+                    <div class="media-outlet">Big News Network</div>
+                    <p class="media-quote">"Alternative Investments with AEQUIFIN: 2026 Litigation Funding Deserves Attention"</p>
+                    <a href="https://www.bignewsnetwork.com/news/278631805/alternative-investments-with-aequifin-2026-litigation-funding-deserves-attention" class="media-link" target="_blank" rel="noopener noreferrer">Read Article →</a>
+                </div>
+                <div class="media-mention">
+                    <div class="media-outlet">Manager Magazin</div>
+                    <p class="media-quote">"Müller ist dabei, sich gut 50.000 Euro für ihre Klage über die Prozessfinanzierungsplattform Aequifin zu besorgen."</p>
+                    <a href="https://www.manager-magazin.de/unternehmen/industrie/francotyp-postalia-investor-rolf-elgeti-ist-mit-neuer-klage-konfrontiert-a-e4be3914-7171-4e32-88ce-a935ab5c27a0" class="media-link" target="_blank" rel="noopener noreferrer">Read Article →</a>
+                </div>
+            </div>
+        </section>
 
-                    <div class="press-testimonials">
-                        <h4 class="press-testimonials-title">Testimonials</h4>
-                        <div class="testimonial-cards">
-                            <div class="testimonial-card">
-                                <div class="testimonial-mark">“</div>
-                                <p class="testimonial-quote">Der ursprüngliche Gedanke, damit quasi jedem, der einen guten, gerichtlich durchsetzbaren Anspruch hat, zu seinem „guten Recht“ zu verhelfen, ist jedoch über die letzten Jahre verloren gegangen. (…) Die Prozessfinanzierungsplattform AEQUIFIN ist einen anderen Weg gegangen. Digitale Plattformmodelle gelten in der Branche zunehmend als strukturelle Weiterentwicklung klassischer Finanzierungsansätze.</p>
-                                <p class="testimonial-name">Dr. Arndt Eversberg</p>
-                                <a href="https://www.aequifin.com/en/team-company" class="testimonial-cta">Mehr über Dr. Arndt Eversberg →</a>
-                            </div>
-                            <div class="testimonial-card">
-                                <div class="testimonial-mark">“</div>
-                                <p class="testimonial-quote">Die Prozessfinanzierungsplattform AEQUIFIN ist einen anderen Weg gegangen. Digitale Plattformmodelle gelten in der Branche zunehmend als strukturelle Weiterentwicklung klassischer Finanzierungsansätze. (…) Im Gegensatz zu den gewerblichen Finanzierern hat hier also quasi jeder die Möglichkeit, jemanden anderen zu helfen und an einem Erfolg mitzuverdienen.</p>
-                                <p class="testimonial-name">Dr. Arndt Eversberg</p>
-                                <a href="https://www.aequifin.com/en/team-company" class="testimonial-cta">Zur Einschätzung von Dr. Eversberg →</a>
-                            </div>
-                                <div class="testimonial-card">
-                                    <div class="testimonial-mark">“</div>
-                                    <p class="testimonial-quote">Das Manager Magazin berichtet unter dem Titel „Meike Müller attackiert Investor Elgeti“ in seiner gerade erschienenen Oktober-Ausgabe über den Rechtsfall „Anspruch auf Vergütung für Aktientransaktion“ und weist darauf hin, dass die Betroffene eine Prozessfinanzierung über die AEQUIFIN-Plattform sucht.</p>
-                                    <p class="testimonial-name">manager magazin</p>
-                                    <a href="https://www.manager-magazin.de/unternehmen/industrie/francotyp-postalia-investor-rolf-elgeti-ist-mit-neuer-klage-konfrontiert-a-e4be3914-7171-4e32-88ce-a935ab5c27a0" class="testimonial-cta">Zum Artikel im manager magazin →</a>
-                                </div>
-                        </div>
+        <!-- Testimonials -->
+        <section class="content-section testimonials-section">
+            <div class="ts-head">
+                <h2>Testimonials</h2>
+                <div class="ts-nav">
+                    <button class="testimonial-arrow testimonial-arrow-left" type="button" aria-label="Previous">&#8249;</button>
+                    <button class="testimonial-arrow testimonial-arrow-right" type="button" aria-label="Next">&#8250;</button>
+                </div>
+            </div>
+            <div class="swiper ts-swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide testimonial-card">
+                        <div class="testimonial-mark">“</div>
+                        <p class="testimonial-quote">Ich darf die Sponsoren darüber informieren, dass nicht nur die Urteilsgründe „unseres“ Falles, sondern nunmehr auch eines weiteren Falles nunmehr vorliegen. Wir haben auch in diesem zweiten Fall auf ganzer Linie gewonnen! Ich danke Ihnen nochmals sehr dafür, dass Sie das alles ermöglicht haben mit Ihrer Finanzierung.</p>
+                        <div class="testimonial-author"><div class="testimonial-avatar"><img src="assets/dirk-legler.jpg" alt="Dr. Dirk Legler"></div><div class="testimonial-author-text"><p class="testimonial-name">Dr. Dirk Legler, Rechtsanwalt</p><a href="https://www.aequifin.com/de/" class="testimonial-cta">Zur Einschätzung von Dr. Dirk Legler →</a></div></div>
+                    </div>
+                    <div class="swiper-slide testimonial-card">
+                        <div class="testimonial-mark">“</div>
+                        <p class="testimonial-quote">Die Unterstützung durch AEQUIFIN und die Sponsoren hat sich im Verfahren sehr bemerkbar gemacht. Man hatte einfach eine gewisse Sicherheit und konnte sich zusammen mit dem Juristen auf den Fall konzentrieren. Man hat auch das finanzielle Polster und muss nicht gleich klein beigeben, wenn man im Recht ist.</p>
+                        <div class="testimonial-author"><div class="testimonial-avatar"><img src="assets/gabriel-Guareshi1.png" alt="Gabriel Quareschi"></div><div class="testimonial-author-text"><p class="testimonial-name">Gabriel Quareschi, Immobilienunternehmer</p></div></div>
+                    </div>
+                    <div class="swiper-slide testimonial-card">
+                        <div class="testimonial-mark">“</div>
+                        <p class="testimonial-quote">Die Gegenpartei hat den Geschäftsführer des von mir verwalteten Unternehmens unter Druck gesetzt, dass er in der Insolvenz sowieso keine Mittel für einen Prozess haben würde. Und so wäre es auch gekommen, wenn es die Firma AEQUIFIN nicht gegeben hätte, die die Prozessfinanzierung ermöglichte. Insbesondere auch Dank an alle Sponsoren, die hier mit eingestiegen sind und eine Rechtsfortbildung ermöglicht haben.</p>
+                        <div class="testimonial-author"><div class="testimonial-avatar"><img src="assets/josef-hingerl.png" alt="Dr. Josef Hingerl"></div><div class="testimonial-author-text"><p class="testimonial-name">Dr. Josef Hingerl, Insolvenzverwalter und Rechtsanwalt</p></div></div>
+                    </div>
+                    <div class="swiper-slide testimonial-card">
+                        <div class="testimonial-mark">“</div>
+                        <p class="testimonial-quote">Ich unterstütze AEQUIFIN, weil ich es spannend finde, dass man durch Sponsoring an einer Prozessfinanzierung beteiligt ist. AEQUIFIN schafft Fairness, weil dadurch oft Prozessfinanzierung erst möglich gemacht werden kann.</p>
+                        <div class="testimonial-author"><div class="testimonial-avatar"><img src="assets/kathrin-lohmann.jpg" alt="Kathrin Lohmann"></div><div class="testimonial-author-text"><p class="testimonial-name">Kathrin Lohmann, Sponsorin und Aktionärin</p></div></div>
                     </div>
                 </div>
             </div>
@@ -642,6 +664,7 @@
         </div>
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

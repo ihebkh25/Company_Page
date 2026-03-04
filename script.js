@@ -167,5 +167,118 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     // (Highlight resets are now handled on item/node mouseleave)
+
+    // Video expand on click
+    const videoWrapper = document.querySelector('.who-video-wrapper[data-video-id]');
+    if (videoWrapper) {
+        const videoLink = videoWrapper.querySelector('.who-video-link');
+        const layout = videoWrapper.closest('.who-layout');
+        const videoId = videoWrapper.dataset.videoId;
+
+        videoLink.addEventListener('click', () => {
+            if (layout.classList.contains('video-expanded')) return;
+
+            layout.classList.add('video-expanded');
+
+            const iframe = document.createElement('iframe');
+            iframe.src = 'https://player.vimeo.com/video/' + videoId + '?autoplay=1&title=0&byline=0&portrait=0';
+            iframe.setAttribute('allow', 'autoplay; fullscreen; picture-in-picture');
+            iframe.setAttribute('allowfullscreen', '');
+
+            videoLink.style.display = 'none';
+            videoWrapper.appendChild(iframe);
+
+            videoWrapper.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        });
+    }
+
+    // Team member detail panel
+    const teamGrid = document.querySelector('.team-grid-equal');
+    const detailPanel = document.querySelector('.team-member-detail');
+    if (teamGrid && detailPanel) {
+        const cards = teamGrid.querySelectorAll('.team-member-card');
+        const closeBtn = detailPanel.querySelector('.detail-close');
+
+        function getColCount() {
+            const style = getComputedStyle(teamGrid);
+            const cols = style.gridTemplateColumns.split(' ').length;
+            return cols;
+        }
+
+        function closePanel() {
+            detailPanel.classList.remove('open');
+            detailPanel.style.display = 'none';
+            cards.forEach(c => c.classList.remove('selected'));
+        }
+
+        function openPanel(card) {
+            const wasOpen = detailPanel.classList.contains('open');
+            const wasSame = card.classList.contains('selected');
+
+            cards.forEach(c => c.classList.remove('selected'));
+
+            if (wasOpen && wasSame) {
+                closePanel();
+                return;
+            }
+
+            card.classList.add('selected');
+
+            const name = card.querySelector('h4').textContent;
+            const role = card.querySelector('.member-role').textContent;
+            const imgSrc = card.querySelector('.member-avatar img').src;
+            const imgAlt = card.querySelector('.member-avatar img').alt;
+
+            detailPanel.querySelector('.detail-name').textContent = name;
+            detailPanel.querySelector('.detail-role').textContent = role;
+            detailPanel.querySelector('.detail-avatar img').src = imgSrc;
+            detailPanel.querySelector('.detail-avatar img').alt = imgAlt;
+
+            const cols = getColCount();
+            const cardArray = Array.from(cards);
+            const cardIndex = cardArray.indexOf(card);
+            const rowEnd = Math.min((Math.floor(cardIndex / cols) + 1) * cols, cardArray.length);
+            const lastCardInRow = cardArray[rowEnd - 1];
+
+            detailPanel.style.display = 'none';
+            detailPanel.classList.remove('open');
+            lastCardInRow.after(detailPanel);
+
+            detailPanel.style.display = 'block';
+            requestAnimationFrame(() => {
+                requestAnimationFrame(() => {
+                    detailPanel.classList.add('open');
+                    detailPanel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                });
+            });
+        }
+
+        cards.forEach(card => {
+            card.addEventListener('click', () => openPanel(card));
+        });
+
+        closeBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            closePanel();
+        });
+    }
+
+    // Testimonials slider using Swiper.js (independent section)
+    if (window.Swiper) {
+        new Swiper('.ts-swiper', {
+            slidesPerView: 1,
+            spaceBetween: 24,
+            loop: true,
+            navigation: {
+                nextEl: '.testimonial-arrow-right',
+                prevEl: '.testimonial-arrow-left',
+            },
+            breakpoints: {
+                768: {
+                    slidesPerView: 3,
+                },
+            },
+        });
+    }
 });
 

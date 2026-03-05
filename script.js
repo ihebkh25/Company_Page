@@ -234,6 +234,37 @@ document.addEventListener('DOMContentLoaded', function() {
             detailPanel.querySelector('.detail-avatar img').src = imgSrc;
             detailPanel.querySelector('.detail-avatar img').alt = imgAlt;
 
+            const memberLocation = card.querySelector('.member-location');
+            detailPanel.querySelector('.detail-location').textContent = memberLocation ? memberLocation.textContent : 'Munich, Germany';
+
+            const detailBio = detailPanel.querySelector('.detail-bio');
+            detailBio.innerHTML = '';
+            const memberBio = card.querySelector('.member-bio');
+            if (memberBio) {
+                memberBio.querySelectorAll('li').forEach(li => {
+                    const clone = li.cloneNode(true);
+                    detailBio.appendChild(clone);
+                });
+            }
+
+            const linkedinLink = card.querySelector('a[aria-label^="View LinkedIn profile"]');
+            const detailLinkedin = detailPanel.querySelector('.detail-linkedin');
+            if (linkedinLink) {
+                detailLinkedin.href = linkedinLink.href;
+                detailLinkedin.style.display = '';
+            } else {
+                detailLinkedin.style.display = 'none';
+            }
+
+            const authorLink = card.querySelector('a[aria-label^="View author page"]');
+            const detailAuthor = detailPanel.querySelector('.detail-author');
+            if (authorLink) {
+                detailAuthor.href = authorLink.href;
+                detailAuthor.style.display = '';
+            } else {
+                detailAuthor.style.display = 'none';
+            }
+
             const cols = getColCount();
             const cardArray = Array.from(cards);
             const cardIndex = cardArray.indexOf(card);

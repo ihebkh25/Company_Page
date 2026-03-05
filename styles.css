@@ -384,15 +384,15 @@ button {
 }
 
 .trust-visual-header {
-    margin-bottom: 1.5rem;
-    padding-bottom: 1rem;
+    margin-bottom: 1.75rem;
+    padding-bottom: 1.25rem;
     border-bottom: 1px solid var(--color-slate-200);
 }
 
 .trust-visual-header h4 {
     margin: 0;
     color: var(--color-theme-3);
-    font-size: 1rem;
+    font-size: 1.15rem;
     font-weight: 600;
 }
 
@@ -495,13 +495,13 @@ button {
 
 /* Trust Numbers Card (AEQUIFIN in Numbers) */
 .trust-numbers-card {
-    padding: 2rem 2rem;
+    padding: 2.75rem;
 }
 
 .trust-numbers-list {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 1rem;
+    gap: 1.35rem;
 }
 
 .trust-number-row {
@@ -509,21 +509,21 @@ button {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    padding: 1.25rem 0.75rem;
+    padding: 2rem 1.1rem;
     border-radius: var(--radius-lg);
     background-color: var(--color-slate-50);
 }
 
 .trust-number-value {
-    font-size: 2rem;
+    font-size: 2.5rem;
     font-weight: 800;
     color: var(--color-theme-3);
     line-height: 1;
-    margin-bottom: 0.4rem;
+    margin-bottom: 0.5rem;
 }
 
 .trust-number-label {
-    font-size: 0.8rem;
+    font-size: 0.9rem;
     font-weight: 500;
     color: var(--color-slate-600);
     line-height: 1.3;

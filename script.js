@@ -178,7 +178,11 @@ document.addEventListener('DOMContentLoaded', function() {
         videoLink.addEventListener('click', () => {
             if (layout.classList.contains('video-expanded')) return;
 
-            layout.classList.add('video-expanded');
+            const isMobile = window.innerWidth < 768;
+
+            if (!isMobile) {
+                layout.classList.add('video-expanded');
+            }
 
             const iframe = document.createElement('iframe');
             iframe.src = 'https://player.vimeo.com/video/' + videoId + '?autoplay=1&title=0&byline=0&portrait=0';
@@ -188,7 +192,9 @@ document.addEventListener('DOMContentLoaded', function() {
             videoLink.style.display = 'none';
             videoWrapper.appendChild(iframe);
 
-            videoWrapper.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            if (!isMobile) {
+                videoWrapper.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            }
         });
     }
 
@@ -310,6 +316,42 @@ document.addEventListener('DOMContentLoaded', function() {
                 },
             },
         });
+    }
+
+    // Team: "Discover our Team" expand button on mobile
+    const teamShowMore = document.querySelector('.team-show-more');
+    const teamGridEl = document.querySelector('.team-grid-equal');
+    if (teamShowMore && teamGridEl) {
+        teamShowMore.addEventListener('click', () => {
+            teamGridEl.classList.add('team-expanded');
+            teamShowMore.classList.add('hidden');
+        });
+    }
+
+    // Ecosystem arrows: scroll-activated on mobile
+    const ecosystemArrows = document.querySelectorAll('.ecosystem-arrow');
+    if (ecosystemArrows.length > 0 && window.innerWidth < 768) {
+        const items = document.querySelectorAll('.ecosystem-item');
+
+        const arrowObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                const arrow = entry.target;
+                const prev = arrow.previousElementSibling;
+                const next = arrow.nextElementSibling;
+
+                if (entry.isIntersecting) {
+                    arrow.classList.add('active');
+                    if (prev) prev.classList.add('arrow-linked');
+                    if (next) next.classList.add('arrow-linked');
+                } else {
+                    arrow.classList.remove('active');
+                    if (prev) prev.classList.remove('arrow-linked');
+                    if (next) next.classList.remove('arrow-linked');
+                }
+            });
+        }, { threshold: 0.5 });
+
+        ecosystemArrows.forEach(arrow => arrowObserver.observe(arrow));
     }
 });
 

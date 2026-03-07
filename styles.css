@@ -2724,3 +2724,169 @@ html {
     }
 }
 
+/* ===================== */
+/* MOBILE / TABLET RESPONSIVE */
+/* ===================== */
+
+/* Ecosystem arrows: hidden on desktop, visible on mobile */
+.ecosystem-arrow {
+    display: none;
+}
+
+@media (max-width: 767px) {
+    /* --- Video: disable jump animation on mobile --- */
+    #who-is-aequifin .who-layout.video-expanded {
+        flex-direction: column;
+        gap: 2.5rem;
+    }
+
+    #who-is-aequifin .who-layout.video-expanded .who-video {
+        order: 0;
+    }
+
+    #who-is-aequifin .who-layout.video-expanded .who-text {
+        order: 0;
+    }
+
+    /* --- Ecosystem: hide SVG circles and gray background --- */
+    .ecosystem-visual-column {
+        display: none;
+    }
+
+    .ecosystem-visualization {
+        background-color: transparent;
+        border: none;
+        padding: 1rem 0;
+    }
+
+    .ecosystem-text-column {
+        gap: 0;
+    }
+
+    /* --- Ecosystem arrows on mobile --- */
+    .ecosystem-arrow {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0.75rem 0;
+        color: var(--color-slate-200);
+        transition: color 0.4s ease;
+    }
+
+    .ecosystem-arrow svg {
+        width: 60px;
+        height: 30px;
+        transform: rotate(90deg);
+    }
+
+    .ecosystem-arrow.active {
+        color: var(--color-theme-2);
+    }
+
+    .ecosystem-item {
+        transition: border-color 0.4s ease, box-shadow 0.3s ease;
+    }
+
+    .ecosystem-item.arrow-linked {
+        border-color: var(--color-theme-2);
+        box-shadow: 0 0 0 1px var(--color-theme-2);
+    }
+
+    /* --- Center "View Our Process" button --- */
+    .trust-feature-actions {
+        justify-content: center;
+    }
+
+    /* --- AEQUIFIN in Numbers: center and shrink --- */
+    .trust-numbers-card {
+        padding: 1.75rem;
+    }
+
+    .trust-numbers-list {
+        gap: 0.75rem;
+    }
+
+    .trust-number-row {
+        padding: 1.25rem 0.75rem;
+    }
+
+    .trust-number-value {
+        font-size: 1.75rem;
+    }
+
+    .trust-number-label {
+        font-size: 0.75rem;
+    }
+
+    .trust-feature-visual {
+        justify-content: center;
+    }
+
+    /* --- Team: show only first 3, with expand button --- */
+    .team-grid-equal .team-member-card:nth-child(n+4) {
+        display: none;
+    }
+
+    .team-grid-equal.team-expanded .team-member-card:nth-child(n+4) {
+        display: block;
+    }
+
+    .team-show-more {
+        display: block !important;
+        margin: 1.5rem auto 0;
+    }
+
+    .team-show-more.hidden {
+        display: none !important;
+    }
+
+    /* --- Testimonials: arrows inside cards, light gray & transparent --- */
+    .testimonials-section {
+        position: relative;
+    }
+
+    .ts-nav {
+        position: absolute;
+        top: 55%;
+        left: 0;
+        right: 0;
+        z-index: 10;
+        display: flex;
+        justify-content: space-between;
+        pointer-events: none;
+        transform: translateY(-50%);
+        padding: 0 0.5rem;
+    }
+
+    .testimonial-arrow {
+        pointer-events: auto;
+        width: 36px;
+        height: 36px;
+        background: none;
+        box-shadow: none;
+        border: none;
+        border-radius: 0;
+        color: rgba(180, 180, 180, 0.55);
+        font-size: 2rem;
+        transition: color 0.15s ease, transform 0.15s ease;
+    }
+
+    .testimonial-arrow:hover:not(:disabled) {
+        background-color: transparent;
+        border-color: transparent;
+        box-shadow: none;
+        color: rgba(180, 180, 180, 0.55);
+        transform: none;
+    }
+
+    .testimonial-arrow:active:not(:disabled) {
+        color: rgba(120, 120, 120, 0.8);
+        transform: scale(1.2);
+    }
+}
+
+/* Team show-more button: hidden on desktop */
+.team-show-more {
+    display: none;
+}
+

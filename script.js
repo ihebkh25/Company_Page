@@ -215,6 +215,10 @@ document.addEventListener('DOMContentLoaded', function() {
             detailPanel.classList.remove('open');
             detailPanel.style.display = 'none';
             cards.forEach(c => c.classList.remove('selected'));
+            // On mobile, move detail panel back to end so nth-child hiding works correctly
+            if (window.innerWidth < 768) {
+                teamGrid.appendChild(detailPanel);
+            }
         }
 
         function openPanel(card) {
@@ -318,12 +322,29 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Team: "Discover our Team" expand button on mobile
+    // Team: hide cards beyond first 5 on mobile, with expand button
     const teamShowMore = document.querySelector('.team-show-more');
     const teamGridEl = document.querySelector('.team-grid-equal');
     if (teamShowMore && teamGridEl) {
+        const MOBILE_VISIBLE = 5;
+        const allCards = teamGridEl.querySelectorAll('.team-member-card');
+
+        function applyMobileHiding() {
+            if (window.innerWidth < 768 && !teamGridEl.classList.contains('team-expanded')) {
+                allCards.forEach((card, i) => {
+                    card.classList.toggle('card-extra', i >= MOBILE_VISIBLE);
+                });
+                teamShowMore.classList.remove('hidden');
+            } else {
+                allCards.forEach(card => card.classList.remove('card-extra'));
+            }
+        }
+
+        applyMobileHiding();
+
         teamShowMore.addEventListener('click', () => {
             teamGridEl.classList.add('team-expanded');
+            allCards.forEach(card => card.classList.remove('card-extra'));
             teamShowMore.classList.add('hidden');
         });
     }

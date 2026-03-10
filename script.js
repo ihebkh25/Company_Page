@@ -257,7 +257,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 });
             }
 
-            const linkedinLink = card.querySelector('a[aria-label^="View LinkedIn profile"]');
+            const linkedinLink = card.querySelector('a[aria-label^="View LinkedIn profile"], a[aria-label^="LinkedIn-Profil"]');
             const detailLinkedin = detailPanel.querySelector('.detail-linkedin');
             if (linkedinLink) {
                 detailLinkedin.href = linkedinLink.href;
@@ -266,7 +266,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 detailLinkedin.style.display = 'none';
             }
 
-            const authorLink = card.querySelector('a[aria-label^="View author page"]');
+            const authorLink = card.querySelector('a[aria-label^="View author page"], a[aria-label^="Autorenseite"]');
             const detailAuthor = detailPanel.querySelector('.detail-author');
             if (authorLink) {
                 detailAuthor.href = authorLink.href;

@@ -1,0 +1,489 @@
+/* ========================================
+   SOLUTIONS PAGE — Interactive Solution Explorer
+   ======================================== */
+
+/* --- Intro --- */
+.sol-intro {
+    font-size: 1.15rem;
+    color: var(--color-text);
+    max-width: 800px;
+    margin: 0 auto 2rem;
+    text-align: center;
+    line-height: 1.7;
+}
+
+/* --- Explorer Section --- */
+.sol-explorer-section {
+    overflow: visible;
+}
+
+/* --- Cards Row --- */
+.sol-cards-row {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    padding: 2rem 0 3rem;
+}
+
+/* --- Individual Card --- */
+.sol-card {
+    position: relative;
+    flex: 1;
+    max-width: 340px;
+    min-height: 290px;
+    cursor: pointer;
+    transition: box-shadow 0.4s ease, transform 0.4s ease;
+    border-radius: 0.75rem;
+    background: var(--color-white);
+    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.05);
+    border: 1px solid var(--color-theme-3);
+    overflow: hidden;
+}
+
+/* Accent line at top — unified brand blue */
+.sol-card-accent {
+    height: 3px;
+    width: 100%;
+    background: var(--color-theme-3);
+    transition: height 0.3s ease;
+}
+
+.sol-card:hover .sol-card-accent {
+    height: 5px;
+}
+
+.sol-card-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2.5rem 1.5rem 2rem;
+    text-align: center;
+    gap: 0.75rem;
+}
+
+/* --- Floating Icon --- */
+.sol-card-icon {
+    width: 52px;
+    height: 52px;
+    color: var(--color-theme-3);
+    animation: sol-float 4s ease-in-out infinite;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.sol-card-icon svg {
+    width: 100%;
+    height: 100%;
+}
+
+.sol-card:hover .sol-card-icon {
+    animation: none;
+    transform: scale(1.1);
+    color: var(--color-theme-3);
+}
+
+@keyframes sol-float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+}
+
+/* --- Card Title & Subtitle --- */
+.sol-card-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--color-theme-3);
+    margin: 0.25rem 0 0;
+    letter-spacing: -0.01em;
+}
+
+.sol-card-subtitle {
+    font-size: 0.9rem;
+    color: var(--color-slate-500);
+    font-weight: 400;
+    margin: 0;
+}
+
+/* --- Explore Hint --- */
+.sol-card-expand-hint {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    margin-top: 1rem;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--color-slate-500);
+    transition: color 0.3s ease;
+}
+
+.sol-card-expand-hint svg {
+    width: 16px;
+    height: 16px;
+    transition: transform 0.3s ease;
+}
+
+.sol-card:hover .sol-card-expand-hint {
+    color: var(--color-theme-3);
+}
+
+.sol-card:hover .sol-card-expand-hint svg {
+    transform: translateY(2px);
+}
+
+/* --- Card Preview Text --- */
+.sol-card-preview {
+    font-size: 0.85rem;
+    color: var(--color-slate-500);
+    line-height: 1.5;
+    margin: 0.25rem 0 0;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.4s ease, opacity 0.3s ease, margin 0.3s ease;
+}
+
+.sol-card:hover .sol-card-preview {
+    max-height: 80px;
+    opacity: 1;
+    margin: 0.5rem 0 0;
+}
+
+/* --- Card Hover Elevation --- */
+.sol-card:hover {
+    box-shadow: 0 8px 32px rgba(0, 87, 129, 0.1);
+    transform: translateY(-4px);
+}
+
+/* --- Active Card (expanded) --- */
+.sol-card.sol-active {
+    box-shadow: 0 0 0 2px var(--color-theme-3), 0 8px 32px rgba(0, 87, 129, 0.12);
+}
+
+.sol-card.sol-active .sol-card-accent {
+    height: 5px;
+}
+
+.sol-card.sol-active .sol-card-expand-hint svg {
+    transform: rotate(180deg);
+}
+
+.sol-card.sol-active .sol-card-expand-hint span {
+    display: none;
+}
+
+/* Dimmed state for sibling cards */
+.sol-card.sol-dimmed {
+    opacity: 0.4;
+    filter: grayscale(0.15);
+    transform: scale(0.98) !important;
+    pointer-events: none;
+    transition: opacity 0.4s ease, transform 0.4s ease, filter 0.4s ease;
+}
+
+/* --- Scroll Reveal Entrance --- */
+.sol-card {
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.sol-card.sol-revealed {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+                box-shadow 0.4s ease;
+}
+
+.sol-card:nth-child(1).sol-revealed { transition-delay: 0s; }
+.sol-card:nth-child(2).sol-revealed { transition-delay: 0.12s; }
+.sol-card:nth-child(3).sol-revealed { transition-delay: 0.24s; }
+
+.sol-card.sol-dimmed {
+    opacity: 0.4;
+}
+
+/* =========================================
+   DETAIL PANELS
+   ========================================= */
+
+.sol-detail-panel {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+                opacity 0.4s ease,
+                margin 0.4s ease;
+    margin: 0;
+}
+
+.sol-detail-panel.sol-panel-open {
+    max-height: 800px;
+    opacity: 1;
+    margin: 1.5rem 0 2rem;
+}
+
+.sol-panel-inner {
+    position: relative;
+    background: var(--color-slate-50);
+    border-radius: 0.75rem;
+    padding: 2.5rem 3rem;
+    border: 1px solid var(--color-border);
+}
+
+.sol-panel-close {
+    position: absolute;
+    top: 1rem;
+    right: 1.25rem;
+    font-size: 1.5rem;
+    color: var(--color-slate-500);
+    cursor: pointer;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.sol-panel-close:hover {
+    background: var(--color-slate-200);
+    color: var(--color-theme-3);
+}
+
+.sol-panel-header h3 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--color-theme-3);
+    margin: 0 0 1rem;
+}
+
+/* --- Features List --- */
+.sol-panel-features {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.sol-panel-features-split {
+    grid-template-columns: 1fr 1fr;
+}
+
+.sol-panel-col {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.sol-panel-col-label {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-slate-500);
+    font-weight: 600;
+    margin: 0 0 0.25rem;
+    padding-bottom: 0.25rem;
+    border-bottom: 1px solid var(--color-slate-200);
+}
+
+/* --- Feature Item --- */
+.sol-panel-feature {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    opacity: 0;
+    transform: translateX(-10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.sol-panel-open .sol-panel-feature {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.sol-panel-open .sol-panel-feature:nth-child(1) { transition-delay: 0.05s; }
+.sol-panel-open .sol-panel-feature:nth-child(2) { transition-delay: 0.10s; }
+.sol-panel-open .sol-panel-feature:nth-child(3) { transition-delay: 0.15s; }
+.sol-panel-open .sol-panel-feature:nth-child(4) { transition-delay: 0.20s; }
+.sol-panel-open .sol-panel-feature:nth-child(5) { transition-delay: 0.25s; }
+.sol-panel-open .sol-panel-feature:nth-child(6) { transition-delay: 0.30s; }
+
+.sol-panel-col .sol-panel-feature:nth-child(2) { transition-delay: 0.08s; }
+.sol-panel-col .sol-panel-feature:nth-child(3) { transition-delay: 0.16s; }
+.sol-panel-col .sol-panel-feature:nth-child(4) { transition-delay: 0.24s; }
+.sol-panel-col .sol-panel-feature:nth-child(5) { transition-delay: 0.32s; }
+
+/* --- Dot --- */
+.sol-dot {
+    width: 7px;
+    height: 7px;
+    min-width: 7px;
+    border-radius: 50%;
+    background: var(--color-theme-3);
+    margin-top: 0.5rem;
+    transition: transform 0.3s ease;
+}
+
+.sol-panel-open .sol-dot {
+    animation: sol-dot-pop 0.4s ease forwards;
+}
+
+@keyframes sol-dot-pop {
+    0% { transform: scale(0); }
+    70% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+.sol-panel-feature span {
+    font-size: 0.95rem;
+    color: var(--color-text);
+    line-height: 1.5;
+}
+
+.sol-panel-feature:hover .sol-dot {
+    transform: scale(1.3);
+}
+
+.sol-panel-feature:hover span {
+    color: var(--color-theme-3);
+}
+
+/* --- Sub-bullet (indented) --- */
+.sol-panel-feature--sub {
+    padding-left: 1.5rem;
+}
+
+.sol-panel-feature--sub .sol-dot {
+    width: 6px;
+    height: 6px;
+    min-width: 6px;
+    border-radius: 50%;
+    background: transparent;
+    border: 1.5px solid var(--color-theme-3);
+}
+
+/* --- Panel CTA --- */
+.sol-panel-cta {
+    margin-top: 1.5rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--color-slate-200);
+}
+
+.sol-panel-cta .button-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.95rem;
+    padding: 0.65rem 1.75rem;
+    text-decoration: none;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.sol-panel-cta .button-primary:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 87, 129, 0.2);
+}
+
+/* =========================================
+   RESPONSIVE — Mobile
+   ========================================= */
+
+@media (max-width: 767px) {
+    .sol-cards-row {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 1rem;
+        perspective: none;
+        padding: 1rem 0 1.5rem;
+    }
+
+    .sol-card {
+        max-width: 100%;
+        min-height: auto;
+        width: 100%;
+        flex: none;
+    }
+
+    .sol-card-inner {
+        display: grid;
+        grid-template-columns: 40px 1fr auto;
+        grid-template-rows: auto auto;
+        align-items: center;
+        padding: 1.25rem 1.5rem;
+        gap: 0.125rem 1rem;
+        text-align: left;
+        min-height: 88px;
+    }
+
+    .sol-card-icon {
+        grid-column: 1;
+        grid-row: 1 / -1;
+        width: 40px;
+        height: 40px;
+        animation: none;
+    }
+
+    .sol-card-title {
+        grid-column: 2;
+        grid-row: 1;
+        font-size: 1.1rem;
+    }
+
+    .sol-card-subtitle {
+        grid-column: 2;
+        grid-row: 2;
+        font-size: 0.8rem;
+    }
+
+    .sol-card-expand-hint {
+        grid-column: 3;
+        grid-row: 1 / -1;
+        margin-top: 0;
+        margin-left: 0;
+    }
+
+    .sol-card-expand-hint span {
+        display: none;
+    }
+
+    .sol-card-preview {
+        display: none;
+    }
+
+    .sol-detail-panel {
+        width: 100%;
+        flex: none;
+    }
+
+    .sol-detail-panel.sol-panel-open {
+        max-height: 1200px;
+        margin: 0.25rem 0 0.5rem;
+    }
+
+    .sol-panel-inner {
+        padding: 1.5rem;
+    }
+
+    .sol-panel-features {
+        grid-template-columns: 1fr;
+    }
+
+    .sol-panel-features-split {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .sol-panel-feature span {
+        font-size: 0.9rem;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .sol-card {
+        max-width: 280px;
+        min-height: 260px;
+    }
+
+    .sol-card-inner {
+        padding: 2rem 1.25rem 1.5rem;
+    }
+}

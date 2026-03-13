@@ -384,6 +384,62 @@
 }
 
 /* =========================================
+   VALUES SECTION
+   ========================================= */
+
+.values-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem 3rem;
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+.value-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.25rem;
+}
+
+.value-icon {
+    flex-shrink: 0;
+    width: 56px;
+    height: 56px;
+    color: var(--color-theme-1);
+}
+
+.value-icon svg,
+.value-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.value-content {
+    flex: 1;
+    min-width: 0;
+}
+
+.value-title {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--color-theme-3);
+    margin: 0 0 0.6rem;
+    line-height: 1.3;
+}
+
+.value-description {
+    font-size: 0.92rem;
+    color: var(--color-text);
+    line-height: 1.65;
+    margin: 0 0 0.5rem;
+}
+
+.value-description:last-child {
+    margin-bottom: 0;
+}
+
+/* =========================================
    RESPONSIVE — Mobile
    ========================================= */
 
@@ -474,6 +530,16 @@
 
     .sol-panel-feature span {
         font-size: 0.9rem;
+    }
+
+    .values-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .value-icon {
+        width: 48px;
+        height: 48px;
     }
 }
 

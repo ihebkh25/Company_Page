@@ -1,0 +1,1074 @@
+/* ========================================
+   VIDEO HUB PAGE
+   ======================================== */
+
+/* --- Hero --- */
+.vt-hero {
+    text-align: center;
+    padding: 2rem 0 1rem;
+}
+
+.vt-hero h1 {
+    text-align: center;
+}
+
+.vt-hero-sub {
+    font-size: 1.1rem;
+    color: var(--color-slate-500);
+    max-width: 640px;
+    margin: 0.5rem auto 0;
+    line-height: 1.65;
+}
+
+/* --- Section Quick-Nav --- */
+.vt-nav {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    padding: 0.5rem 0 1.5rem;
+}
+
+.vt-nav a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.5rem 1rem;
+    font-size: 0.82rem;
+    font-weight: 500;
+    color: var(--color-theme-3);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-full);
+    text-decoration: none;
+    transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.vt-nav a:hover {
+    background: var(--color-theme-3);
+    border-color: var(--color-theme-3);
+    color: var(--color-white);
+    text-decoration: none;
+}
+
+.vt-nav a svg {
+    width: 15px;
+    height: 15px;
+    flex-shrink: 0;
+}
+
+/* =========================================
+   SECTION SHARED STYLES
+   ========================================= */
+
+.vt-section {
+    margin-bottom: 3rem;
+    scroll-margin-top: 100px;
+}
+
+.vt-section:last-of-type {
+    margin-bottom: 2rem;
+}
+
+.vt-section-header {
+    margin-bottom: 1.5rem;
+}
+
+.vt-section-text h3 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--color-theme-3);
+    margin: 0 0 0.15rem;
+    line-height: 1.2;
+}
+
+.vt-section-text p {
+    font-size: 0.85rem;
+    color: var(--color-slate-500);
+    margin: 0;
+    line-height: 1.5;
+}
+
+.vt-section-divider {
+    border: none;
+    border-top: 1px solid var(--color-border);
+    margin: 0 0 3rem;
+}
+
+/* =========================================
+   PROGRESS DASHBOARD (Learning Videos only)
+   ========================================= */
+
+.vt-progress {
+    background: var(--color-slate-50);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-xl);
+    padding: 1.75rem 2rem;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.vt-progress-ring-wrap {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    flex-shrink: 0;
+}
+
+.vt-progress-ring {
+    width: 80px;
+    height: 80px;
+    transform: rotate(-90deg);
+}
+
+.vt-progress-ring-bg {
+    fill: none;
+    stroke: var(--color-slate-200);
+    stroke-width: 6;
+}
+
+.vt-progress-ring-fill {
+    fill: none;
+    stroke: var(--color-theme-3);
+    stroke-width: 6;
+    stroke-linecap: round;
+    transition: stroke-dashoffset 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.vt-progress-pct {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--color-theme-3);
+}
+
+.vt-progress-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.vt-progress-title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-theme-3);
+    margin-bottom: 0.35rem;
+}
+
+.vt-progress-detail {
+    font-size: 0.875rem;
+    color: var(--color-slate-500);
+    margin-bottom: 0.6rem;
+}
+
+.vt-progress-bar-track {
+    height: 6px;
+    background: var(--color-slate-200);
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.vt-progress-bar-fill {
+    height: 100%;
+    background: var(--color-theme-3);
+    border-radius: 3px;
+    transition: width 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    width: 0%;
+}
+
+.vt-progress-badge {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background: var(--color-theme-3);
+    color: var(--color-white);
+}
+
+.vt-progress-badge.unlocked {
+    background: var(--color-theme-3);
+    color: var(--color-white);
+    box-shadow: 0 2px 12px rgba(0, 87, 129, 0.25);
+}
+
+.vt-progress-badge.unlocked:hover {
+    transform: scale(1.12);
+    box-shadow: 0 4px 20px rgba(0, 87, 129, 0.35);
+}
+
+.vt-progress-badge svg {
+    width: 22px;
+    height: 22px;
+}
+
+.vt-progress-badge-tip {
+    position: absolute;
+    bottom: calc(100% + 8px);
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--color-theme-3);
+    color: var(--color-white);
+    font-size: 0.7rem;
+    font-weight: 500;
+    padding: 4px 10px;
+    border-radius: 4px;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease;
+}
+
+.vt-progress-badge-tip::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 4px solid transparent;
+    border-top-color: var(--color-theme-3);
+}
+
+.vt-progress-badge:hover .vt-progress-badge-tip {
+    opacity: 1;
+}
+
+/* CTA that appears at 100% inside the progress dashboard */
+.vt-progress-cta {
+    display: none;
+    width: 100%;
+    text-align: center;
+    padding: 1rem 1.5rem;
+    margin-top: 0.25rem;
+    background: rgba(0, 87, 129, 0.06);
+    border-top: 1px solid rgba(0, 87, 129, 0.12);
+    border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+}
+
+.vt-progress-cta.visible {
+    display: block;
+    animation: vt-cta-in 0.5s ease;
+}
+
+@keyframes vt-cta-in {
+    0% { opacity: 0; transform: translateY(8px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+.vt-progress-cta-text {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--color-theme-3);
+    margin-bottom: 0.75rem;
+}
+
+.vt-progress-cta .button-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    font-size: 0.9rem;
+    padding: 10px 24px;
+}
+
+/* =========================================
+   SHARED VIDEO GRID & CARD
+   ========================================= */
+
+.vt-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+}
+
+.vt-card {
+    background: var(--color-white);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+                box-shadow 0.35s ease,
+                border-color 0.3s ease;
+    cursor: pointer;
+    position: relative;
+    opacity: 0;
+    transform: translateY(24px);
+}
+
+.vt-card.revealed {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+                box-shadow 0.35s ease,
+                border-color 0.3s ease;
+}
+
+.vt-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 32px rgba(0, 87, 129, 0.1);
+    border-color: var(--color-theme-3);
+}
+
+/* Watched state — only for learning cards */
+.vt-card.watched {
+    border-color: var(--color-theme-3);
+}
+
+.vt-card.watched::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: var(--color-theme-3);
+}
+
+/* Staggered reveal */
+.vt-card:nth-child(1).revealed { transition-delay: 0s; }
+.vt-card:nth-child(2).revealed { transition-delay: 0.1s; }
+.vt-card:nth-child(3).revealed { transition-delay: 0.2s; }
+.vt-card:nth-child(4).revealed { transition-delay: 0.3s; }
+
+/* --- Thumbnail --- */
+.vt-thumb {
+    position: relative;
+    aspect-ratio: 16 / 9;
+    background: var(--color-slate-50);
+    overflow: hidden;
+}
+
+.vt-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.6s ease;
+}
+
+.vt-card:hover .vt-thumb img {
+    transform: scale(1.04);
+}
+
+.vt-thumb-overlay {
+    display: none;
+}
+
+.vt-thumb-badges {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.vt-duration {
+    background: rgba(0, 0, 0, 0.65);
+    color: var(--color-white);
+    font-size: 0.72rem;
+    font-weight: 600;
+    padding: 3px 8px;
+    border-radius: 4px;
+    letter-spacing: 0.02em;
+}
+
+.vt-watched-check {
+    width: 26px;
+    height: 26px;
+    background: var(--color-theme-3);
+    border-radius: 50%;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-white);
+    box-shadow: 0 2px 8px rgba(0, 87, 129, 0.3);
+    animation: vt-check-pop 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.vt-card.watched .vt-watched-check {
+    display: flex;
+}
+
+.vt-watched-check svg {
+    width: 14px;
+    height: 14px;
+}
+
+@keyframes vt-check-pop {
+    0% { transform: scale(0); }
+    100% { transform: scale(1); }
+}
+
+/* --- Card Body --- */
+.vt-card-body {
+    padding: 1.25rem 1.25rem 1rem;
+}
+
+.vt-card-label {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    font-weight: 600;
+    color: var(--color-theme-3);
+    margin-bottom: 0.35rem;
+}
+
+.vt-card-title {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--color-theme-3);
+    margin-bottom: 0.4rem;
+    line-height: 1.3;
+}
+
+.vt-card-desc {
+    font-size: 0.85rem;
+    color: var(--color-slate-500);
+    line-height: 1.55;
+    margin: 0;
+}
+
+/* --- Embedded Player State --- */
+.vt-card.playing .vt-thumb img,
+.vt-card.playing .vt-thumb-badges {
+    display: none;
+}
+
+.vt-card.playing .vt-thumb {
+    background: #000;
+}
+
+.vt-card .vt-thumb iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* =========================================
+   SECTION 1 — LEARNING VIDEOS
+   ========================================= */
+
+
+/* =========================================
+   SECTION 2 — CASE VIDEOS (Fall Videos)
+   ========================================= */
+
+.vt-section--cases .vt-card-label {
+    color: var(--color-theme-3);
+}
+
+.vt-case-meta {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+    font-size: 0.75rem;
+    color: var(--color-slate-500);
+}
+
+.vt-case-meta svg {
+    width: 13px;
+    height: 13px;
+    flex-shrink: 0;
+    color: var(--color-theme-3);
+}
+
+/* =========================================
+   SECTION 3 — ABOUT AEQUIFIN
+   ========================================= */
+
+.vt-section--about .vt-card-label {
+    color: var(--color-theme-3);
+}
+
+.vt-speaker {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    margin-top: 0.75rem;
+    padding-top: 0.75rem;
+    border-top: 1px solid var(--color-slate-200);
+}
+
+.vt-speaker-avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: var(--color-slate-200);
+    overflow: hidden;
+    flex-shrink: 0;
+    border: 2px solid var(--color-border);
+}
+
+.vt-speaker-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.vt-speaker-name {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--color-theme-3);
+    line-height: 1.3;
+}
+
+.vt-speaker-role {
+    font-size: 0.78rem;
+    color: var(--color-slate-500);
+}
+
+/* =========================================
+   SECTION 4 — TESTIMONIALS (Erfahrungen)
+   ========================================= */
+
+.vt-section--testimonials .vt-card-label {
+    color: var(--color-theme-3);
+}
+
+.vt-section--testimonials .vt-card {
+    border-radius: var(--radius-xl);
+    border: 1px solid var(--color-border);
+}
+
+.vt-testimonial-quote {
+    font-size: 0.88rem;
+    font-style: italic;
+    color: var(--color-text);
+    line-height: 1.55;
+    margin: 0.5rem 0 0;
+    position: relative;
+    padding-left: 1rem;
+    border-left: 2px solid var(--color-theme-3);
+}
+
+/* =========================================
+   BOTTOM SECTIONS
+   ========================================= */
+
+/* --- Data Privacy Hint (GDPR) --- */
+.vt-privacy {
+    font-size: 0.75rem;
+    color: var(--color-slate-500);
+    text-align: center;
+    margin-top: 0.5rem;
+    line-height: 1.5;
+}
+
+.vt-privacy a {
+    color: var(--color-theme-3);
+}
+
+/* --- INVEST Support --- */
+.vt-invest {
+    text-align: center;
+    padding: 2rem 0 0;
+}
+
+.vt-invest p {
+    font-size: 0.85rem;
+    color: var(--color-slate-500);
+    margin-bottom: 0.75rem;
+}
+
+.vt-invest img {
+    max-height: 60px;
+    display: inline-block;
+}
+
+.vt-invest-links {
+    margin-top: 0.5rem;
+    font-size: 0.78rem;
+    color: var(--color-slate-500);
+}
+
+.vt-invest-links a {
+    color: var(--color-theme-3);
+}
+
+/* Hidden panel content inside cards */
+.vt-panel-content {
+    display: none;
+}
+
+/* =========================================
+   EXPANDED CARD (in-place video expansion)
+   ========================================= */
+
+.vt-card.expanded {
+    grid-column: 1 / -1;
+    cursor: default;
+    transform: none !important;
+    border-color: var(--color-theme-3);
+    box-shadow: 0 12px 48px rgba(0, 87, 129, 0.12);
+}
+
+.vt-card.expanded .vt-card-body,
+.vt-card.expanded .vt-thumb {
+    display: none;
+}
+
+.vt-expanded-inner {
+    display: none;
+}
+
+.vt-card.expanded .vt-expanded-inner {
+    display: flex;
+    animation: vt-expand-in 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes vt-expand-in {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+.vt-expanded-video {
+    position: relative;
+    aspect-ratio: 16 / 9;
+    border-radius: var(--radius-xl) 0 0 var(--radius-xl);
+    overflow: hidden;
+    flex: 3;
+    min-width: 0;
+}
+
+.vt-expanded-video iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.vt-expanded-panel {
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    border-left: 1px solid var(--color-border);
+    flex: 1;
+    min-width: 0;
+}
+
+.vt-expanded-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.1rem 1.5rem;
+    border-bottom: 1px solid var(--color-border);
+    flex-shrink: 0;
+}
+
+.vt-expanded-header h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--color-theme-3);
+    margin: 0;
+    line-height: 1.3;
+}
+
+.vt-expanded-close {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: none;
+    background: var(--color-slate-50);
+    color: var(--color-slate-500);
+    font-size: 1.25rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s ease, color 0.2s ease;
+    flex-shrink: 0;
+    margin-left: 1rem;
+}
+
+.vt-expanded-close:hover {
+    background: var(--color-slate-200);
+    color: var(--color-theme-3);
+}
+
+.vt-expanded-info {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    flex: 1;
+}
+
+.vt-expanded-info h4 {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--color-theme-3);
+    margin: 0;
+}
+
+.vt-expanded-info p {
+    font-size: 0.9rem;
+    color: var(--color-text);
+    line-height: 1.65;
+    margin: 0;
+}
+
+.vt-expanded-info ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+}
+
+.vt-expanded-info ul li {
+    font-size: 0.85rem;
+    color: var(--color-text);
+    padding-left: 1rem;
+    position: relative;
+    line-height: 1.5;
+}
+
+.vt-expanded-info ul li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.55rem;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--color-theme-3);
+}
+
+.vt-expanded-info .vt-modal-role {
+    font-size: 0.82rem;
+    color: var(--color-slate-500);
+    font-weight: 500;
+}
+
+.vt-expanded-info .vt-modal-quote {
+    font-style: italic;
+    padding-left: 1rem;
+    border-left: 2px solid var(--color-theme-3);
+}
+
+.vt-expanded-info .vt-modal-speaker {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--color-slate-200);
+}
+
+.vt-expanded-info .vt-modal-speaker img {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--color-border);
+}
+
+/* --- Confetti Canvas --- */
+#vt-confetti {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 9999;
+}
+
+/* =========================================
+   RESPONSIVE
+   ========================================= */
+
+@media (max-width: 767px) {
+    /* --- Page container --- */
+    .main-content {
+        padding: 1.5rem 1.25rem;
+    }
+
+    /* --- Disable animations on mobile --- */
+    .vt-card {
+        opacity: 1;
+        transform: none;
+        transition: border-color 0.3s ease;
+    }
+
+    .vt-card.revealed {
+        transition: none;
+    }
+
+    .vt-card:hover {
+        transform: none;
+        box-shadow: none;
+    }
+
+    .vt-card:nth-child(1).revealed,
+    .vt-card:nth-child(2).revealed,
+    .vt-card:nth-child(3).revealed,
+    .vt-card:nth-child(4).revealed {
+        transition-delay: 0s;
+    }
+
+    /* --- Hero --- */
+    .vt-hero {
+        padding: 1.25rem 0 0.5rem;
+    }
+
+    .vt-hero h1 {
+        font-size: 1.5rem;
+    }
+
+    .vt-hero-sub {
+        font-size: 0.88rem;
+        max-width: 100%;
+    }
+
+    /* --- Section Nav --- */
+    .vt-nav {
+        gap: 0.35rem;
+        padding: 0.5rem 0 1rem;
+        justify-content: flex-start;
+        overflow-x: auto;
+        flex-wrap: nowrap;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+    }
+
+    .vt-nav::-webkit-scrollbar {
+        display: none;
+    }
+
+    .vt-nav a {
+        font-size: 0.72rem;
+        padding: 0.4rem 0.7rem;
+        white-space: nowrap;
+        flex-shrink: 0;
+    }
+
+    /* --- Progress Dashboard --- */
+    .vt-progress {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+        padding: 1.25rem 1rem;
+    }
+
+    .vt-progress-ring-wrap {
+        width: 64px;
+        height: 64px;
+    }
+
+    .vt-progress-ring {
+        width: 64px;
+        height: 64px;
+    }
+
+    .vt-progress-pct {
+        font-size: 1rem;
+    }
+
+    .vt-progress-title {
+        font-size: 0.9rem;
+    }
+
+    .vt-progress-detail {
+        font-size: 0.8rem;
+    }
+
+    .vt-progress-badge {
+        width: 40px;
+        height: 40px;
+    }
+
+    .vt-progress-badge svg {
+        width: 18px;
+        height: 18px;
+    }
+
+    .vt-progress-cta-text {
+        font-size: 0.85rem;
+    }
+
+    .vt-progress-cta .button-primary {
+        font-size: 0.82rem;
+        padding: 8px 20px;
+    }
+
+    /* --- Sections --- */
+    .vt-section {
+        margin-bottom: 1.75rem;
+    }
+
+    .vt-section-header {
+        margin-bottom: 1rem;
+    }
+
+    .vt-section-text h3 {
+        font-size: 1.15rem;
+    }
+
+    .vt-section-text p {
+        font-size: 0.8rem;
+    }
+
+    .vt-section-divider {
+        margin: 0 0 1.75rem;
+    }
+
+    /* --- Grid --- */
+    .vt-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    /* --- Cards --- */
+    .vt-card-body {
+        padding: 1rem;
+    }
+
+    .vt-card-label {
+        font-size: 0.65rem;
+    }
+
+    .vt-card-title {
+        font-size: 0.95rem;
+        margin-bottom: 0.3rem;
+    }
+
+    .vt-card-desc {
+        font-size: 0.8rem;
+        line-height: 1.5;
+    }
+
+    /* --- Thumbnail badges --- */
+    .vt-thumb-badges {
+        top: 8px;
+        left: 8px;
+        right: 8px;
+    }
+
+    .vt-duration {
+        font-size: 0.68rem;
+        padding: 2px 6px;
+    }
+
+    /* --- Case meta --- */
+    .vt-case-meta {
+        font-size: 0.7rem;
+        gap: 0.4rem;
+    }
+
+    /* --- Speaker (About section cards) --- */
+    .vt-speaker {
+        gap: 0.6rem;
+        margin-top: 0.6rem;
+        padding-top: 0.6rem;
+    }
+
+    .vt-speaker-avatar {
+        width: 36px;
+        height: 36px;
+    }
+
+    .vt-speaker-name {
+        font-size: 0.82rem;
+    }
+
+    .vt-speaker-role {
+        font-size: 0.72rem;
+    }
+
+    /* --- Testimonial quote --- */
+    .vt-testimonial-quote {
+        font-size: 0.82rem;
+        line-height: 1.5;
+    }
+
+    /* --- Expanded state (fallback, not used on mobile) --- */
+    .vt-card.expanded {
+        grid-column: 1;
+    }
+
+    .vt-card.expanded .vt-expanded-inner {
+        flex-direction: column;
+        min-height: auto;
+        animation: none;
+    }
+
+    .vt-expanded-video {
+        border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+        flex: none;
+    }
+
+    .vt-expanded-panel {
+        max-height: none;
+        min-height: 0;
+        flex: none;
+        border-left: none;
+        border-top: 1px solid var(--color-border);
+    }
+
+    .vt-expanded-header {
+        padding: 0.85rem 1rem;
+    }
+
+    .vt-expanded-header h3 {
+        font-size: 0.95rem;
+    }
+
+    .vt-expanded-info {
+        padding: 1rem;
+        gap: 0.6rem;
+    }
+
+    .vt-expanded-info h4 {
+        font-size: 0.95rem;
+    }
+
+    .vt-expanded-info p {
+        font-size: 0.82rem;
+    }
+
+    .vt-expanded-info ul li {
+        font-size: 0.8rem;
+    }
+
+    /* --- Privacy & Invest --- */
+    .vt-privacy {
+        font-size: 0.7rem;
+    }
+
+    .vt-invest p {
+        font-size: 0.8rem;
+    }
+
+    .vt-invest img {
+        max-height: 48px;
+    }
+
+    .vt-invest-links {
+        font-size: 0.72rem;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .vt-grid {
+        gap: 1.25rem;
+    }
+
+    .vt-hero-sub {
+        font-size: 1rem;
+    }
+}

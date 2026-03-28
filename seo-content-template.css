@@ -1,0 +1,299 @@
+/* ============================================================
+   SEO Content Block — Stylesheet
+   ============================================================
+   This stylesheet controls the appearance of SEO content
+   injected at the bottom of case pages (e.g. /en/maklercourtage).
+
+   DEVELOPER: Apply the class "seo-content" to the wrapping
+   container that holds the backend text input output.
+
+   These styles are designed to match the AEQUIFIN design system:
+     --color-theme-3: #005781  (primary dark blue — headings, links)
+     --color-theme-2: #008ece  (accent blue)
+     --color-theme-1: #66d1ff  (light blue)
+     --color-text:    rgba(0,0,0,0.7)
+     --font-body:     'Roboto', sans-serif
+   ============================================================ */
+
+/* ---- Container ---- */
+.seo-content {
+    max-width: 900px;
+    margin: 3rem auto;
+    padding: 0 1.5rem 2rem;
+    font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    color: rgba(0, 0, 0, 0.7);
+    line-height: 1.75;
+    font-size: 1rem;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* ---- Sections ---- */
+.seo-section {
+    margin-bottom: 2.75rem;
+}
+
+.seo-section:last-child {
+    margin-bottom: 0;
+}
+
+/* ---- Headings ---- */
+.seo-content h2.seo-heading {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #005781;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #e2e8f0;
+    letter-spacing: -0.01em;
+    line-height: 1.35;
+}
+
+.seo-content h3 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: #005781;
+    margin-bottom: 0.6rem;
+    line-height: 1.4;
+}
+
+/* ---- Paragraphs ---- */
+.seo-content p {
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    line-height: 1.75;
+    color: rgba(0, 0, 0, 0.7);
+}
+
+.seo-content p:last-child {
+    margin-bottom: 0;
+}
+
+.seo-lead {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: rgba(0, 0, 0, 0.8);
+}
+
+/* ---- Links ---- */
+.seo-content a {
+    color: #005781;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    transition: opacity 0.2s ease;
+}
+
+.seo-content a:hover {
+    opacity: 0.75;
+}
+
+/* ---- Lists ---- */
+.seo-list,
+.seo-key-figures {
+    list-style: none;
+    padding: 0;
+    margin: 0.75rem 0 1.25rem 0;
+}
+
+.seo-list li {
+    position: relative;
+    padding-left: 1.4rem;
+    margin-bottom: 0.6rem;
+    line-height: 1.7;
+}
+
+.seo-list li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.55em;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background-color: #005781;
+}
+
+.seo-key-figures li {
+    padding: 0.65rem 1rem;
+    margin-bottom: 0.5rem;
+    background-color: #f8fafc;
+    border-left: 3px solid #005781;
+    border-radius: 0 6px 6px 0;
+    font-size: 1.05rem;
+}
+
+.seo-key-figures li strong {
+    color: #005781;
+}
+
+/* ---- Tables ---- */
+.seo-table-wrapper {
+    overflow-x: auto;
+    margin: 1.25rem 0 1.5rem;
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+}
+
+.seo-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.938rem;
+    line-height: 1.65;
+}
+
+.seo-table thead {
+    background-color: #005781;
+}
+
+.seo-table thead th {
+    color: #ffffff;
+    font-weight: 600;
+    text-align: left;
+    padding: 0.85rem 1.1rem;
+    font-size: 0.938rem;
+    letter-spacing: 0.01em;
+    white-space: nowrap;
+}
+
+.seo-table tbody td {
+    padding: 0.85rem 1.1rem;
+    border-bottom: 1px solid #e2e8f0;
+    vertical-align: top;
+    color: rgba(0, 0, 0, 0.7);
+}
+
+.seo-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.seo-table tbody tr:nth-child(even) {
+    background-color: #f8fafc;
+}
+
+.seo-table tbody td strong {
+    color: rgba(0, 0, 0, 0.85);
+    font-weight: 600;
+}
+
+.seo-table tbody td a {
+    color: #005781;
+}
+
+/* Comparison table — first column is the label */
+.seo-table-comparison td:first-child {
+    width: 22%;
+    background-color: #f1f5f9;
+    font-weight: 500;
+    white-space: normal;
+}
+
+.seo-table-comparison th:first-child {
+    width: 22%;
+}
+
+/* ---- Scenario Cards ---- */
+.seo-scenario-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin: 1.5rem 0;
+}
+
+.seo-scenario-card {
+    padding: 1.25rem 1.5rem;
+    border-radius: 8px;
+    border-left: 4px solid;
+}
+
+.seo-scenario-card h3 {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.seo-scenario-card p {
+    font-size: 0.938rem;
+    margin-bottom: 0;
+}
+
+.seo-scenario-success {
+    background-color: #f0fdf4;
+    border-left-color: #16a34a;
+}
+
+.seo-scenario-success h3 {
+    color: #15803d;
+}
+
+.seo-scenario-risk {
+    background-color: #fef2f2;
+    border-left-color: #dc2626;
+}
+
+.seo-scenario-risk h3 {
+    color: #b91c1c;
+}
+
+/* ---- Example Box ---- */
+.seo-example-box {
+    background-color: #f0f7fc;
+    border: 1px solid #bdd9ee;
+    border-radius: 8px;
+    padding: 1.25rem 1.5rem;
+    margin: 1rem 0 1.25rem;
+}
+
+.seo-example-box h3 {
+    color: #005781;
+    margin-bottom: 0.4rem;
+    font-size: 1.05rem;
+}
+
+.seo-example-box p {
+    margin-bottom: 0;
+}
+
+.seo-example-box strong {
+    color: #005781;
+}
+
+/* ---- Disclaimer ---- */
+.seo-disclaimer {
+    font-size: 0.875rem;
+    font-style: italic;
+    color: #64748b;
+    margin-top: 0.75rem;
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 767px) {
+    .seo-content {
+        padding: 0 1rem 1.5rem;
+        margin: 2rem auto;
+    }
+
+    .seo-content h2.seo-heading {
+        font-size: 1.25rem;
+    }
+
+    .seo-scenario-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .seo-table {
+        font-size: 0.85rem;
+    }
+
+    .seo-table thead th,
+    .seo-table tbody td {
+        padding: 0.65rem 0.75rem;
+    }
+
+    .seo-table-comparison td:first-child {
+        width: auto;
+    }
+
+    .seo-table thead th {
+        white-space: normal;
+    }
+}

@@ -1,21 +1,4 @@
-/* ============================================================
-   SEO Content Block — Stylesheet
-   ============================================================
-   This stylesheet controls the appearance of SEO content
-   injected at the bottom of case pages (e.g. /en/maklercourtage).
 
-   DEVELOPER: Apply the class "seo-content" to the wrapping
-   container that holds the backend text input output.
-
-   These styles are designed to match the AEQUIFIN design system:
-     --color-theme-3: #005781  (primary dark blue — headings, links)
-     --color-theme-2: #008ece  (accent blue)
-     --color-theme-1: #66d1ff  (light blue)
-     --color-text:    rgba(0,0,0,0.7)
-     --font-body:     'Roboto', sans-serif
-   ============================================================ */
-
-/* ---- Container ---- */
 .seo-content {
     max-width: 900px;
     margin: 3rem auto;
@@ -27,7 +10,6 @@
     -webkit-font-smoothing: antialiased;
 }
 
-/* ---- Sections ---- */
 .seo-section {
     margin-bottom: 2.75rem;
 }
@@ -36,7 +18,7 @@
     margin-bottom: 0;
 }
 
-/* ---- Headings ---- */
+
 .seo-content h2.seo-heading {
     font-family: 'Roboto', sans-serif;
     font-size: 1.5rem;
@@ -58,7 +40,7 @@
     line-height: 1.4;
 }
 
-/* ---- Paragraphs ---- */
+
 .seo-content p {
     margin-bottom: 1rem;
     font-size: 1rem;
@@ -76,7 +58,7 @@
     color: rgba(0, 0, 0, 0.8);
 }
 
-/* ---- Links ---- */
+
 .seo-content a {
     color: #005781;
     text-decoration: underline;
@@ -88,7 +70,7 @@
     opacity: 0.75;
 }
 
-/* ---- Lists ---- */
+
 .seo-list,
 .seo-key-figures {
     list-style: none;
@@ -127,7 +109,7 @@
     color: #005781;
 }
 
-/* ---- Tables ---- */
+
 .seo-table-wrapper {
     overflow-x: auto;
     margin: 1.25rem 0 1.5rem;
@@ -180,7 +162,7 @@
     color: #005781;
 }
 
-/* Comparison table — first column is the label */
+
 .seo-table-comparison td:first-child {
     width: 22%;
     background-color: #f1f5f9;
@@ -192,7 +174,7 @@
     width: 22%;
 }
 
-/* ---- Scenario Cards ---- */
+
 .seo-scenario-cards {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -234,7 +216,7 @@
     color: #b91c1c;
 }
 
-/* ---- Example Box ---- */
+
 .seo-example-box {
     background-color: #f0f7fc;
     border: 1px solid #bdd9ee;
@@ -257,7 +239,7 @@
     color: #005781;
 }
 
-/* ---- Disclaimer ---- */
+
 .seo-disclaimer {
     font-size: 0.875rem;
     font-style: italic;
@@ -265,7 +247,7 @@
     margin-top: 0.75rem;
 }
 
-/* ---- Responsive ---- */
+
 @media (max-width: 767px) {
     .seo-content {
         padding: 0 1rem 1.5rem;

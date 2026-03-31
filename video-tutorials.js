@@ -1,6 +1,11 @@
 document.addEventListener('DOMContentLoaded', function () {
     var STORAGE_KEY = 'aequifin_vt_learning';
 
+    /* Client showcase: progress resets to 0% on every reload. Remove this block for production. */
+    try {
+        localStorage.removeItem(STORAGE_KEY);
+    } catch (e) {}
+
     var learningSection = document.getElementById('learning-videos');
     var learningCards = learningSection
         ? learningSection.querySelectorAll('.vt-card[data-video-id]')
@@ -17,6 +22,7 @@ document.addEventListener('DOMContentLoaded', function () {
     var allCards = document.querySelectorAll('.vt-card[data-video-id]');
 
     var currentExpanded = null;
+    var wasAllLearningComplete = false;
 
     var mobileQuery = window.matchMedia('(max-width: 767px)');
 
@@ -36,10 +42,16 @@ document.addEventListener('DOMContentLoaded', function () {
         localStorage.setItem(STORAGE_KEY, JSON.stringify(arr));
     }
 
-    function markLearningWatched(videoId) {
+    function getLearningProgressKey(card) {
+        return card.dataset.learningKey || card.dataset.videoId;
+    }
+
+    function markLearningWatched(card) {
+        if (!isLearningCard(card)) return;
+        var key = getLearningProgressKey(card);
         var watched = getWatched();
-        if (watched.indexOf(videoId) === -1) {
-            watched.push(videoId);
+        if (watched.indexOf(key) === -1) {
+            watched.push(key);
             saveWatched(watched);
         }
         updateProgress();
@@ -60,8 +72,8 @@ document.addEventListener('DOMContentLoaded', function () {
         var watched = getWatched();
         var count = 0;
         learningCards.forEach(function (card) {
-            var id = card.dataset.videoId;
-            var isWatched = watched.indexOf(id) !== -1;
+            var key = getLearningProgressKey(card);
+            var isWatched = watched.indexOf(key) !== -1;
             card.classList.toggle('watched', isWatched);
             if (isWatched) count++;
         });
@@ -87,13 +99,10 @@ document.addEventListener('DOMContentLoaded', function () {
             progressBadge.classList.toggle('unlocked', allDone);
         }
 
-        if (progressCta) {
-            var wasVisible = progressCta.classList.contains('visible');
-            progressCta.classList.toggle('visible', allDone);
-            if (allDone && !wasVisible) {
-                fireConfetti();
-            }
+        if (allDone && !wasAllLearningComplete) {
+            fireConfetti();
         }
+        wasAllLearningComplete = allDone;
     }
 
     function embedVideo(card) {
@@ -109,7 +118,7 @@ document.addEventListener('DOMContentLoaded', function () {
         thumb.appendChild(iframe);
 
         if (isLearningCard(card)) {
-            markLearningWatched(videoId);
+            markLearningWatched(card);
         }
     }
 
@@ -207,7 +216,11 @@ document.addEventListener('DOMContentLoaded', function () {
     allCards.forEach(function (card) {
         card.addEventListener('click', function () {
             if (isMobile()) {
-                embedVideo(card);
+                if (card.closest('.vt-section--testimonials')) {
+                    expandCard(card);
+                } else {
+                    embedVideo(card);
+                }
             } else if (isModalSection(card)) {
                 expandCard(card);
             } else {

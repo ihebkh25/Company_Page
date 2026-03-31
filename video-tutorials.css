@@ -37,15 +37,17 @@
     font-size: 0.82rem;
     font-weight: 500;
     color: var(--color-theme-3);
-    border: 1px solid var(--color-border);
+    border: 2px solid var(--color-theme-3);
     border-radius: var(--radius-full);
     text-decoration: none;
-    transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+    background: linear-gradient(to right, var(--color-theme-3) 50%, transparent 50%);
+    background-size: 220% 100%;
+    background-position: right bottom;
+    transition: all 0.25s ease-out;
 }
 
 .vt-nav a:hover {
-    background: var(--color-theme-3);
-    border-color: var(--color-theme-3);
+    background-position: left bottom;
     color: var(--color-white);
     text-decoration: none;
 }
@@ -242,9 +244,9 @@
     opacity: 1;
 }
 
-/* CTA that appears at 100% inside the progress dashboard */
+/* CTA below learning progress — always visible */
 .vt-progress-cta {
-    display: none;
+    display: block;
     width: 100%;
     text-align: center;
     padding: 1rem 1.5rem;
@@ -252,16 +254,6 @@
     background: rgba(0, 87, 129, 0.06);
     border-top: 1px solid rgba(0, 87, 129, 0.12);
     border-radius: 0 0 var(--radius-lg) var(--radius-lg);
-}
-
-.vt-progress-cta.visible {
-    display: block;
-    animation: vt-cta-in 0.5s ease;
-}
-
-@keyframes vt-cta-in {
-    0% { opacity: 0; transform: translateY(8px); }
-    100% { opacity: 1; transform: translateY(0); }
 }
 
 .vt-progress-cta-text {
@@ -485,6 +477,17 @@
     height: 13px;
     flex-shrink: 0;
     color: var(--color-theme-3);
+}
+
+.vt-cases-cta {
+    display: flex;
+    justify-content: center;
+    margin-top: 1.75rem;
+}
+
+.vt-cases-cta .button-primary {
+    text-decoration: none;
+    text-align: center;
 }
 
 /* =========================================
@@ -764,6 +767,23 @@
     border-left: 2px solid var(--color-theme-3);
 }
 
+.vt-expanded-info .vt-panel-case-cta {
+    margin-top: 0.25rem;
+    padding-top: 1.1rem;
+    border-top: 1px solid var(--color-slate-200);
+}
+
+.vt-expanded-info .vt-panel-case-cta .button-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 0.85rem;
+    padding: 10px 20px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
 .vt-expanded-info .vt-modal-speaker {
     display: flex;
     align-items: center;
@@ -996,7 +1016,7 @@
         line-height: 1.5;
     }
 
-    /* --- Expanded state (fallback, not used on mobile) --- */
+    /* --- Expanded state (testimonials use expand on mobile; cases/about use inline play) --- */
     .vt-card.expanded {
         grid-column: 1;
     }

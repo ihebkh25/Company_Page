@@ -108,11 +108,15 @@ document.addEventListener('DOMContentLoaded', function () {
     function embedVideo(card) {
         if (card.classList.contains('playing')) return;
         var videoId = card.dataset.videoId;
+        var videoHash = card.dataset.videoH || '';
         var thumb = card.querySelector('.vt-thumb');
         card.classList.add('playing');
 
         var iframe = document.createElement('iframe');
-        iframe.src = 'https://player.vimeo.com/video/' + videoId + '?h=d51394dafe&autoplay=1&title=0&byline=0&portrait=0&badge=0&autopause=0';
+        var query = videoHash
+            ? '?h=' + videoHash + '&autoplay=1&title=0&byline=0&portrait=0&badge=0&autopause=0'
+            : '?autoplay=1&title=0&byline=0&portrait=0&badge=0&autopause=0';
+        iframe.src = 'https://player.vimeo.com/video/' + videoId + query;
         iframe.setAttribute('allow', 'autoplay; fullscreen; picture-in-picture');
         iframe.setAttribute('allowfullscreen', '');
         thumb.appendChild(iframe);
@@ -132,6 +136,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         var videoId = card.dataset.videoId;
+        var videoHash = card.dataset.videoH || '';
         var title = card.querySelector('.vt-card-title');
         var panelContent = card.querySelector('.vt-panel-content');
 
@@ -176,8 +181,11 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         var videoContainer = inner.querySelector('.vt-expanded-video');
+        var expandedQuery = videoHash
+            ? '?h=' + videoHash + '&autoplay=1&title=0&byline=0&portrait=0&badge=0&autopause=0'
+            : '?autoplay=1&title=0&byline=0&portrait=0&badge=0&autopause=0';
         videoContainer.innerHTML = '<iframe src="https://player.vimeo.com/video/' + videoId +
-            '?h=d51394dafe&autoplay=1&title=0&byline=0&portrait=0&badge=0&autopause=0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>';
+            expandedQuery + '" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>';
 
         card.classList.add('expanded');
         currentExpanded = card;

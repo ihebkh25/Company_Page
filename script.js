@@ -169,11 +169,12 @@ document.addEventListener('DOMContentLoaded', function() {
     // (Highlight resets are now handled on item/node mouseleave)
 
     // Video expand on click
-    const videoWrapper = document.querySelector('.who-video-wrapper[data-video-id]');
+    const videoWrapper = document.querySelector('.who-video-wrapper[data-video-id], .who-video-wrapper[data-video-src]');
     if (videoWrapper) {
         const videoLink = videoWrapper.querySelector('.who-video-link');
         const layout = videoWrapper.closest('.who-layout');
         const videoId = videoWrapper.dataset.videoId;
+        const videoSrc = videoWrapper.dataset.videoSrc;
 
         videoLink.addEventListener('click', () => {
             if (layout.classList.contains('video-expanded')) return;
@@ -185,9 +186,25 @@ document.addEventListener('DOMContentLoaded', function() {
             }
 
             const iframe = document.createElement('iframe');
-            iframe.src = 'https://player.vimeo.com/video/' + videoId + '?autoplay=1&title=0&byline=0&portrait=0';
-            iframe.setAttribute('allow', 'autoplay; fullscreen; picture-in-picture');
+            let iframeSrc = '';
+
+            if (videoSrc) {
+                try {
+                    const url = new URL(videoSrc);
+                    url.searchParams.set('autoplay', '1');
+                    iframeSrc = url.toString();
+                } catch (error) {
+                    const separator = videoSrc.includes('?') ? '&' : '?';
+                    iframeSrc = videoSrc + separator + 'autoplay=1';
+                }
+            } else if (videoId) {
+                iframeSrc = 'https://player.vimeo.com/video/' + videoId + '?autoplay=1&title=0&byline=0&portrait=0';
+            }
+
+            iframe.src = iframeSrc;
+            iframe.setAttribute('allow', 'autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share');
             iframe.setAttribute('allowfullscreen', '');
+            iframe.setAttribute('referrerpolicy', 'strict-origin-when-cross-origin');
 
             videoLink.style.display = 'none';
             videoWrapper.appendChild(iframe);

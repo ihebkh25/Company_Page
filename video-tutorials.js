@@ -68,6 +68,23 @@ document.addEventListener('DOMContentLoaded', function () {
                card.closest('.vt-section--testimonials');
     }
 
+    function getVideoSrc(card, autoplay) {
+        var customSrc = card.dataset.videoSrc || '';
+        if (customSrc) {
+            var hasQuery = customSrc.indexOf('?') !== -1;
+            return customSrc + (hasQuery ? '&' : '?') +
+                'autoplay=' + (autoplay ? '1' : '0') +
+                '&title=0&byline=0&portrait=0';
+        }
+
+        var videoId = card.dataset.videoId;
+        var videoHash = card.dataset.videoH || '';
+        var query = videoHash
+            ? '?h=' + videoHash + '&autoplay=' + (autoplay ? '1' : '0') + '&title=0&byline=0&portrait=0&badge=0&autopause=0'
+            : '?autoplay=' + (autoplay ? '1' : '0') + '&title=0&byline=0&portrait=0&badge=0&autopause=0';
+        return 'https://player.vimeo.com/video/' + videoId + query;
+    }
+
     function updateProgress() {
         var watched = getWatched();
         var count = 0;
@@ -107,18 +124,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function embedVideo(card) {
         if (card.classList.contains('playing')) return;
-        var videoId = card.dataset.videoId;
-        var videoHash = card.dataset.videoH || '';
         var thumb = card.querySelector('.vt-thumb');
         card.classList.add('playing');
 
         var iframe = document.createElement('iframe');
-        var query = videoHash
-            ? '?h=' + videoHash + '&autoplay=1&title=0&byline=0&portrait=0&badge=0&autopause=0'
-            : '?autoplay=1&title=0&byline=0&portrait=0&badge=0&autopause=0';
-        iframe.src = 'https://player.vimeo.com/video/' + videoId + query;
-        iframe.setAttribute('allow', 'autoplay; fullscreen; picture-in-picture');
+        iframe.src = getVideoSrc(card, true);
+        iframe.setAttribute('allow', 'autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share');
         iframe.setAttribute('allowfullscreen', '');
+        iframe.setAttribute('referrerpolicy', 'strict-origin-when-cross-origin');
         thumb.appendChild(iframe);
 
         if (isLearningCard(card)) {
@@ -135,8 +148,6 @@ document.addEventListener('DOMContentLoaded', function () {
             collapseCard(currentExpanded);
         }
 
-        var videoId = card.dataset.videoId;
-        var videoHash = card.dataset.videoH || '';
         var title = card.querySelector('.vt-card-title');
         var panelContent = card.querySelector('.vt-panel-content');
 
@@ -181,11 +192,8 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         var videoContainer = inner.querySelector('.vt-expanded-video');
-        var expandedQuery = videoHash
-            ? '?h=' + videoHash + '&autoplay=1&title=0&byline=0&portrait=0&badge=0&autopause=0'
-            : '?autoplay=1&title=0&byline=0&portrait=0&badge=0&autopause=0';
-        videoContainer.innerHTML = '<iframe src="https://player.vimeo.com/video/' + videoId +
-            expandedQuery + '" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>';
+        videoContainer.innerHTML = '<iframe src="' + getVideoSrc(card, true) +
+            '" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>';
 
         card.classList.add('expanded');
         currentExpanded = card;

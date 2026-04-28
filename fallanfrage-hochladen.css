@@ -1,0 +1,351 @@
+.flp-main {
+    gap: 2rem;
+}
+
+.flp-hero {
+    padding: 1.5rem;
+    border-radius: var(--radius-xl);
+    background-image:
+        linear-gradient(102deg, rgba(0, 20, 34, 0.66) 0%, rgba(0, 40, 64, 0.45) 44%, rgba(0, 44, 70, 0.2) 100%),
+        url("assets/home_bg.jpg");
+    background-size: cover;
+    background-position: center;
+    color: var(--color-white);
+}
+
+.flp-hero-grid {
+    display: grid;
+    grid-template-columns: 1.45fr 1fr;
+    gap: 1.5rem;
+    align-items: start;
+}
+
+.flp-hero-copy {
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid rgba(210, 229, 242, 0.9);
+    border-radius: var(--radius-xl);
+    padding: 1.25rem;
+}
+
+.flp-eyebrow {
+    display: inline-block;
+    font-size: var(--text-sm);
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--color-theme-2);
+    margin-bottom: 0.65rem;
+}
+
+.flp-hero-copy h1 {
+    color: var(--color-theme-3);
+}
+
+.flp-hero-subtitle {
+    max-width: 62ch;
+}
+
+.flp-hero-cta {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 0.75rem;
+    margin: 1.25rem 0;
+    justify-content: center;
+}
+
+.flp-hero-cta .button-primary,
+.flp-hero-cta .button-secondary {
+    text-align: center;
+    min-width: 0;
+    width: 300px;
+    white-space: normal;
+    line-height: 1.25;
+    padding: 11px 18px;
+}
+
+.flp-quick-points {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1rem;
+    padding: 0;
+    margin: 0;
+    color: var(--color-slate-500);
+    font-size: var(--text-sm);
+}
+
+.flp-quick-points li::before {
+    content: "• ";
+    color: var(--color-theme-2);
+}
+
+.flp-hero-media {
+    display: grid;
+    place-items: center;
+    justify-self: end;
+    align-self: start;
+    width: min(185px, 22vw);
+    padding: 0.45rem;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.22);
+    border: 1px solid rgba(255, 255, 255, 0.45);
+}
+
+.flp-hero-media img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+}
+
+.flp-steps-shell {
+    background: #f2f4f6;
+    border: 1px solid #d7dde3;
+    border-radius: 20px;
+    padding: 1.75rem 1.35rem 2rem;
+}
+
+.flp-steps-title {
+    max-width: 780px;
+    margin: 0 auto 1.55rem;
+    text-align: center;
+    color: var(--color-theme-3);
+    font-size: 1.38rem;
+    font-weight: 600;
+    line-height: 1.35;
+}
+
+.flp-steps {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 0.9rem;
+    overflow-x: auto;
+    padding-bottom: 0.5rem;
+    scrollbar-width: thin;
+}
+
+.flp-step-item,
+.flp-step-arrow {
+    opacity: 0;
+    transform: translateY(14px) scale(0.98);
+    transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+.flp-step-item.is-visible,
+.flp-step-arrow.is-visible {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+.flp-step-item {
+    min-width: 128px;
+    max-width: 146px;
+    text-align: center;
+}
+
+.flp-step-number {
+    display: grid;
+    place-items: center;
+    width: 1.95rem;
+    height: 1.95rem;
+    border-radius: 999px;
+    font-size: 1.02rem;
+    font-weight: 600;
+    color: var(--color-white);
+    background: var(--color-theme-3);
+    margin: 0 auto 0.75rem;
+}
+
+.flp-step-item p {
+    margin: 0;
+    font-size: 0.82rem;
+    color: #314d68;
+    font-weight: 400;
+    line-height: 1.25;
+}
+
+.flp-step-arrow {
+    flex: 0 0 32px;
+    align-self: flex-start;
+    margin-top: 0.95rem;
+    width: 32px;
+    height: 2px;
+    background: #cad6e2;
+    position: relative;
+}
+
+.flp-step-arrow::before {
+    content: none;
+}
+
+.flp-conversion-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    background: linear-gradient(100deg, #fbfeff 0%, #f2f9fd 100%);
+}
+
+.flp-conversion-card h3 {
+    margin-bottom: 0.6rem;
+}
+
+.flp-conversion-card p {
+    margin: 0;
+}
+
+.flp-faq {
+    display: block;
+    background: #ffffff;
+    border-top: 1px solid #dfe3e7;
+}
+
+.flp-faq-item {
+    border-bottom: 1px solid #dfe3e7;
+    background: transparent;
+}
+
+.flp-faq-question {
+    width: 100%;
+    border: 0;
+    background: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    text-align: left;
+    cursor: pointer;
+    padding: 1.15rem 0;
+}
+
+.flp-faq-title {
+    margin: 0;
+    font-size: 1.08rem;
+    font-weight: 500;
+    color: #101418;
+    line-height: 1.45;
+}
+
+.flp-faq-icon {
+    width: 1.4rem;
+    height: 1.4rem;
+    position: relative;
+    flex-shrink: 0;
+    margin-right: 0.25rem;
+}
+
+.flp-faq-icon::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0.55rem;
+    height: 0.55rem;
+    border-right: 2px solid #7b8086;
+    border-bottom: 2px solid #7b8086;
+    transform: translate(-50%, -62%) rotate(45deg);
+    transition: transform 0.2s ease;
+}
+
+.flp-faq-answer {
+    display: none;
+    padding: 0 0 1.2rem;
+}
+
+.flp-faq-answer p {
+    margin: 0 0 0.8rem;
+    color: #4a4f55;
+    font-size: 1rem;
+    line-height: 1.55;
+}
+
+.flp-faq-answer p:last-child {
+    margin-bottom: 0;
+}
+
+.flp-faq-item.is-open .flp-faq-answer {
+    display: block;
+}
+
+.flp-faq-item.is-open .flp-faq-icon::before {
+    transform: translate(-50%, -38%) rotate(-135deg);
+}
+
+.flp-contact {
+    gap: 1.8rem;
+}
+
+.flp-contact .contact-header {
+    margin-bottom: 0.2rem;
+}
+
+.flp-steps-actions {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1.2rem;
+    flex-wrap: wrap;
+}
+
+.flp-steps-actions .button-primary,
+.flp-steps-actions .button-secondary {
+    min-width: 290px;
+    text-align: center;
+    white-space: normal;
+    line-height: 1.25;
+}
+
+@media (max-width: 980px) {
+    .flp-hero-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .flp-hero-media {
+        justify-self: center;
+        width: min(170px, 46vw);
+    }
+
+    .flp-steps {
+        justify-content: flex-start;
+    }
+}
+
+@media (max-width: 700px) {
+    .flp-hero-cta {
+        gap: 0.5rem;
+    }
+
+    .flp-hero-cta .button-primary,
+    .flp-hero-cta .button-secondary {
+        width: 49%;
+        min-width: 0;
+        font-size: 0.9rem;
+        padding: 10px 12px;
+    }
+
+    .flp-conversion-card {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .flp-step-item {
+        min-width: 132px;
+    }
+
+    .flp-steps-title {
+        font-size: 1.05rem;
+    }
+
+    .flp-steps-actions .button-primary,
+    .flp-steps-actions .button-secondary {
+        min-width: 220px;
+    }
+
+    .flp-faq-title {
+        font-size: 1rem;
+    }
+
+    .flp-faq-answer p {
+        font-size: 0.96rem;
+    }
+}

@@ -21,10 +21,8 @@
 }
 
 .flp-hero-copy {
-    background: rgba(255, 255, 255, 0.9);
-    border: 1px solid rgba(210, 229, 242, 0.9);
-    border-radius: var(--radius-xl);
-    padding: 1.25rem;
+    max-width: 760px;
+    padding: 0.25rem 0;
 }
 
 .flp-eyebrow {
@@ -33,16 +31,15 @@
     font-weight: 700;
     letter-spacing: 0.04em;
     text-transform: uppercase;
-    color: var(--color-theme-2);
+    color: #d5efff;
     margin-bottom: 0.65rem;
+    text-shadow: 0 1px 6px rgba(0, 0, 0, 0.28);
 }
 
 .flp-hero-copy h1 {
-    color: var(--color-theme-3);
-}
-
-.flp-hero-subtitle {
-    max-width: 62ch;
+    color: #ffffff;
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.34);
+    margin-bottom: 0.85rem;
 }
 
 .flp-hero-cta {
@@ -61,6 +58,12 @@
     white-space: normal;
     line-height: 1.25;
     padding: 11px 18px;
+    color: #ffffff;
+}
+
+.flp-hero-cta .button-primary:hover,
+.flp-hero-cta .button-secondary:hover {
+    color: #ffffff;
 }
 
 .flp-quick-points {
